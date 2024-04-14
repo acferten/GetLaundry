@@ -1,0 +1,49 @@
+Expense report period from :startTime to :endTime<:n><:n>
+
+🎢 Total expenses: :totalExpenses<:n><:n>
+
+⚙️Total variable costs: :totalVariableExpenses 👉:totalVariableExpensesPercent%<:n>
+🛠Total fixed assets :totalBasicExpenses 👉:totalBasicExpensesPercent%<:n><:n>
+
+🦾Variable costs:<:n><:n>
+
+Detergents - :totalVariableExpenses1 🤙:totalVariableExpenses1Percent%<:n>
+:variableExpenses1<:n>
+
+Gas - :totalVariableExpenses2 🤙:totalVariableExpenses2Percent%<:n>
+:variableExpenses2<:n>
+
+Gasoline couriers - :totalVariableExpenses3 🤙:totalVariableExpenses3Percent%<:n>
+:variableExpenses3<:n>
+
+Bike service - :totalVariableExpenses4 🤙:totalVariableExpenses4Percent%<:n>
+:variableExpenses4<:n>
+
+Electricity - :totalVariableExpenses5 🤙:totalVariableExpenses5Percent%<:n>
+:variableExpenses5<:n>
+
+Marketing - :totalVariableExpenses6 🤙:totalVariableExpenses6Percent%<:n>
+:variableExpenses6<:n>
+
+Bot development - :totalVariableExpenses7 🤙:totalVariableExpenses7Percent%<:n>
+:variableExpenses7<:n>
+
+Household expenses - :totalVariableExpenses8 🤙:totalVariableExpenses8Percent%<:n>
+:variableExpenses8<:n>
+
+Laundress salary - :totalVariableExpenses9 🤙:totalVariableExpenses9Percent%<:n>
+:variableExpenses9<:n>
+
+Salary for couriers - :totalVariableExpenses10 🤙:totalVariableExpenses10Percent%<:n>
+:variableExpenses10<:n>
+
+Bobby's salary - :totalVariableExpenses11 🤙:totalVariableExpenses11Percent%<:n>
+:variableExpenses11<:n>
+
+Salary Admin, translator and others - :totalVariableExpenses12 🤙:totalVariableExpenses12Percent%<:n>
+:variableExpenses12<:n>
+
+💪Equipment and fixed assets:<:n><:n>
+
+:basicExpenses13
+

@@ -1,0 +1,6 @@
+Order <b>#:orderId</b><:n><:n>
+
+Confirm deletion?
+
+<:buttons>Yes;button;/del_order_success :orderId</:buttons>
+<:buttons>No;button;/del_order_deny 2</:buttons>

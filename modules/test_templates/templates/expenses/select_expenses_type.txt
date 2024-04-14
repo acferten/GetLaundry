@@ -1,0 +1,15 @@
+Выберите категорию расходов
+
+<:buttons>Порошки;button;/enter_expenses 1</:buttons>
+<:buttons>Газ;button;/enter_expenses 2</:buttons>
+<:buttons>Бензин;button;/enter_expenses 3</:buttons>
+<:buttons>Ремонт байков;button;/enter_expenses 4</:buttons>
+<:buttons>Электричество;button;/enter_expenses 5</:buttons>
+<:buttons>Маркетинг;button;/enter_expenses 6</:buttons>
+<:buttons>Разработка Бота;button;/enter_expenses 7</:buttons>
+<:buttons>Хоз расходы;button;/enter_expenses 8</:buttons>
+<:buttons>З/п прачкам;button;/enter_expenses 9</:buttons>
+<:buttons>З/п курьерам;button;/enter_expenses 10</:buttons>
+<:buttons>З/п управляющий;button;/enter_expenses 11</:buttons>
+<:buttons>З/п прочие;button;/enter_expenses 12</:buttons>
+<:buttons>Основные средства;button;/enter_expenses 13</:buttons>

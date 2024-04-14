@@ -1,0 +1,5 @@
+:enteredExpenses<:n>
+Entered correctly?
+
+<:buttons>Yes;button;/enter_expenses_confirmation 1 :expensesType :data</:buttons>
+<:buttons>No;button;/enter_expenses_confirmation 2</:buttons>

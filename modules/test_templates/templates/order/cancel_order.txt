@@ -1,0 +1,26 @@
+<:ru>
+😔Мы отменили ваш заказ и уже тоскуем!<:n><:n>
+
+Вы можете заказать стирку в любое время.<:n> 
+Наши курьеры и администраторы работают каждый день с 09:00 до 20:00.<:n><:n>
+
+❗️Заказ, <b>сделанный до 15:00</b>, заберём в течение дня и вернём обратно завтра днём.<:n>
+❗️Заказ, <b>сделанный после 15:00</b>, заберём завтра в течение дня и вернём обратно послезавтра.<:n><:n>
+
+<:buttons>Заказать стирку;button;/start 1</:buttons>
+<:buttons>Написать менеджеру;link;https://t.me/Laundrybot_Russia</:buttons>
+</:ru>
+
+<:eng>
+😔We have canceled your order and are already missing you!<:n><:n>
+
+You can order laundry at any time.<:n>
+Our couriers and administrators work from 09:00 to 20:00.<:n><:n>
+
+❗️Orders placed <b>before 14:00</b> will be picked up within 2 hours and returned back tomorrow afternoon.<:n>
+❗️Orders placed <b>after 14:00</b> will be picked up tonight and returned back tomorrow evening.<:n>
+❗️Orders placed <b>after 18:00</b> will be picked up before lunch tomorrow and returned back the day after tomorrow.<:n><:n>
+
+<:buttons>Order Laundry;button;/start 1</:buttons>
+<:buttons>Recommend to friends;button;/set_free_orders /cancel_orders_pochemy 1</:buttons>
+</:eng>

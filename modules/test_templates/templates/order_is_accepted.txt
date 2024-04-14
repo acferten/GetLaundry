@@ -1,0 +1,53 @@
+<:ru>
+<b>Заказ #:orderId принят👍 </b><:n><:n>
+
+📌Менеджер напишет вам в течение 15 минут и уточнит временя прибытия курьера.<:n>
+📌Подготовьте вещи заранее. Вам не нужно их сортировать. Просто положите вещи в пакет или сумку. У курьера всегда при себе имеется фирменный мешок под одежду.<:n>
+📌Отправьте Особые пожелания по стирке, если такие имеются.<:n>
+📌Оплата заказа происходит во время возврата стиранных вещей.<:n><:n>
+
+❗️Заказ, <b>сделанный до 15:00</b>, заберём в течение дня и вернём обратно завтра днём.<:n>
+❗️Заказ, <b>сделанный после 15:00</b>, заберём завтра в течение дня и вернём обратно послезавтра.<:n><:n>
+
+<b>Прайс:</b><:n>
+👕 Одежда 1 кг. - <b>800 руб.</b><:n><:n>
+
+🤝 Постираем хоть одну рубашку, <:n>
+но <b>заказ минимум 3 кг или 2400 руб.</b><:n><:n>
+
+<b>100% гарантия качества или вернём деньги.</b><:n><:n>
+
+<:buttons>Особые пожелания по стирке;link;https://t.me/Laundrybot_Russia</:buttons>
+<:buttons>Отменить заказ;button;/cancel_orders :orderId</:buttons>
+<:buttons>Рекомендовать друзьям;button;/set_free_orders /back_orders :orderId</:buttons>
+</:ru>
+
+
+<:eng>
+<b>Order #:orderId accepted👍 </b><:n><:n>
+
+📌The courier will write you in advance about the time of arrival.<:n>
+📌 Send Laundry Special Requests, if any.<:n>
+📌For your convenience, you can simply leave things at the reception or your STAFF.<:n>
+📌Payment for the order occurs before the return of the washed items.<:n><:n>
+
+❗️Orders placed <b>before 2 pm</b> will be picked up within 2 hours and returned back tomorrow afternoon.<:n>
+❗️Orders placed <b>after 2 pm</b> will be picked up tonight and returned back tomorrow evening.<:n>
+❗️Orders placed <b>after 6 pm</b> will be picked up before lunch tomorrow and returned back the day after tomorrow.<:n><:n>
+
+<b>Price:</b><:n>
+👕 Clothes 1 kg. - <b>80.000 IDR.</b><:n>
+👟 A pair of shoes - <b>120.000 IDR.</b><:n>
+🛏 Bed linen and towels 1 kg. - <b>50.000 IDR.</b><:n>
+👨‍🚀 Helmet - <b>150.000 IDR.</b><:n><:n>
+
+
+🤝 Let's wash at least one T-shirt,<:n>
+but <b>order minimum 240.000 rupiah.</b><:n><:n>
+
+<b>100% quality guarantee or money back.</b><:n>
+
+<:buttons>Laundry Special Requests;link;https://t.me/LaundryGoBot</:buttons>
+<:buttons>Cancel order;button;/cancel_orders :orderId</:buttons>
+<:buttons>Recommend to friends;button;/set_free_orders /back_orders :orderId</:buttons>
+</:eng>

@@ -1,0 +1,29 @@
+<:ru>
+💳 Вот данные для перевода на карту индонезийского банка BRI в рупиях<:n><:n>
+
+462 801 004 036 508<:n>
+Anak Agung Gede Adi Semara<:n><:n>
+
+🧾 После того как переведёте деньги, пришлите, пожалуйста, чек об оплате в чат менеджеру.<:n><:n>
+
+Сумма для перевода <b>:sum</b>
+<:buttons>Написать менеджеру;link;https://t.me/LaundryGoBot</:buttons>
+</:ru>
+
+<:eng>
+💳 Here is the data for the transfer to the card of the Indonesian bank BRI in IDR.<:n><:n>
+
+If you are transferring from an Indonesian bank card, then use <b>the account number</b><:n>
+<b>462 801 004 036 508</b><:n><:n>
+
+If you have a card of another country, then transfer by <b>card number</b><:n>
+<b>6013011130964124</b><:n><:n>
+
+Card and account in the name:<:n>
+Anak Agung Gede Adi Semara<:n><:n>
+
+🧾 After you transfer the money, please send a payment receipt to the chat manager.<:n><:n>
+
+Amount to transfer <b>:sum</b
+<:buttons>Write to the manager;link;https://t.me/LaundryGoBot</:buttons>
+</:eng>

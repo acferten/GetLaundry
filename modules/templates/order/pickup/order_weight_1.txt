@@ -1,0 +1,14 @@
+<b>ℹ️ Order: #:orderId</b><:n><:n>
+👕Clothes weight: <b>:clothesWeight</b><:n>
+Price for things: <b>:clothesPrice IDR</b><:n><:n>
+
+👟Pair of shoes: <b>:pairOfShoes</b><:n>
+Price for shoes: <b>:shoesPrice IDR</b><:n><:n>
+
+🛏Weight of bed linen and towels:<b>:badLinenWeight</b><:n>
+Price for bed linen and towels:<b>:badLinenPrice IDR</b><:n><:n>
+
+🍀Weight of Organic laundry:<b>:organicWeight</b><:n>
+Price of Organic laundry:<b>:organicPrice IDR</b><:n><:n>
+
+<:n>Order price: <b>:totalPrice IDR</b>

@@ -1,0 +1,29 @@
+<:ru>
+🎉Ваши вещи в чистоте и порядке готовы вернуться обратно в ближайшее время.<:n>
+Менеджер заблаговременно напишет вам и уточнит удобное время доставки.<:n><:n>
+
+<b>Общий вес постиранных вещей:</b><:n>
+👕Одежда <b>:clothesWeight</b> кг. - <b>:clothesPrice</b> рублей.<:n><:n>
+
+<b>Сумма заказа :totalPrice рублей.</b><:n><:n>
+
+Как вам удобнее будет произвести оплату?<:n><:n>
+
+</:ru>
+
+<:eng>
+🎉 Your clean and happy things are ready to be returned soon.<:n>
+The courier will write to you in advance and specify a convenient delivery time.<:n><:n>
+
+<b>Total weight of items washed:</b><:n>
+👕Clothes <b>:clothesWeight</b> kg. - <b>:clothesPrice</b> IDR<:n>
+👟Shoes <b>:pairOfShoes</b> p. - <b>:shoesPrice</b> IDR<:n>
+🛏Bed linen and towels <b>:badLinenWeight</b> kg. - <b>:badLinenPrice</b> IDR<:n>
+🧑‍🚀Helmet <b>:organicWeight</b> p. - <b>:organicPrice</b> IDR<:n><:n>
+
+<b>Order Amount :totalPrice IDR</b><:n><:n>
+
+How would you like to pay?<:n><:n>
+
+‼️The courier will leave things only after payment.
+</:eng>

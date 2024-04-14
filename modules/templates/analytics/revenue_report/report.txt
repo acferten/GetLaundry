@@ -1,0 +1,32 @@
+Report for the period <b>from :startDate to :endDate</b><:n>
+Amount of days: <b>:daysCount</b><:n><:n>
+
+Total orders: <b>:countOrders</b><:n>
+
+New clients: <b>:countFirstOrders</b> 🤙 <b>:percentFirstOrders%</b><:n>
+Repeat clients: <b>:countSecondOrders</b> 🤙 <b>:percentSecondOrders%</b><:n>
+
+Total kg of clothes washed: <b>:totalWeight</b><:n>
+Total number of pairs of shoes cleaned: <b>:totalShoes</b><:n>
+Total number of organic cleaned: <b>:totalOrganic</b><:n>
+Total number of bed linen cleaned: <b>:totalBedLinen</b><:n>
+Revenue for clothes: <b>:totalWeightPrice IDR</b><:n>
+Revenue for shoes: <b>:totalShoesPrice IDR</b><:n>
+Revenue for bed linen: <b>:totalBedLinenPrice IDR</b><:n>
+Revenue for organic: <b>:totalOrganicPrice IDR</b><:n>
+Total revenue: <b>:totalPrice IDR</b><:n>
+Average check of the order: <b>:averagePrice IDR</b><:n>
+Average number of kg of clothes per order: <b>:averageWeight</b><:n>
+Average number of pairs of shoes per order: <b>:averageShoes</b><:n>
+Average number of bed linen per order: <b>:averageBedLinen</b><:n>
+Average number of organic per order: <b>:averageOrganic</b><:n>
+Average number of orders per day: <b>:averageDayOrdersCount</b><:n>
+Average total revenue per day: <b>:averageDayPrice IDR</b><:n>
+Average rating score: <b>:averageRating</b><:n><:n>
+
+Bonuses accrued to referrals: <b>:countReferalsBonuses IDR</b><:n>
+Total bonuses paid: <b>:totalBonusesPaid IDR</b><:n>
+Total paid with bonuses: <b>:countPaidBonuses</b><:n>
+
+Number of season tickets purchased:<:n>
+:wholesaleLaundriesContent

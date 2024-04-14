@@ -1,0 +1,6 @@
+<b>Заказ #:orderId</b><:n><:n>
+
+Фото правильное?
+
+<:buttons>вњ… ДА;button;/order_pickup_order_send_photo_success :orderId</:buttons>
+<:buttons>рџљ« НЕТ;button;/order_pickup_order_send_photo_deny :orderId</:buttons>

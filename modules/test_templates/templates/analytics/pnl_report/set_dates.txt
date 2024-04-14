@@ -1,0 +1,3 @@
+Введите даты отчёта через пробел в формате дд_мм__гггг:
+
+<:buttons>Назад;button;/pnl_report_set_dates_cancel</:buttons>

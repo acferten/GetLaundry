@@ -1,0 +1,4 @@
+Видео верно?
+
+<:buttons>👍 YES;button;/order_pickup_order_send_video_group_success :orderId</:buttons>
+<:buttons>👎 NO;button;/order_pickup_order_send_video_group_deny :orderId</:buttons>

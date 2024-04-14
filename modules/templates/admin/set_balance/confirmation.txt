@@ -1,0 +1,11 @@
+<b>User id: :userId</b><:n>
+User login: <b>:userUsername</b><:n>
+Number: <b>:userPhone</b><:n>
+Whatsapp: <b>:userWhatsapp</b><:n><:n>
+Bonuses will be added in the amount of: <b>:addBalance IDR</b>.<:n><:n>
+The number of user bonuses will become: <b>:totalBalance IDR</b>.<:n><:n>
+
+Confirm the crediting of bonuses?
+
+<:buttons>Yes;button;/set_balance_success :userId :addBalanceButton</:buttons>
+<:buttons>No;button;/set_balance_deny 2</:buttons>

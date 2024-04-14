@@ -1,0 +1,78 @@
+services:
+  web:
+    build:
+      context: docker_images/php
+    container_name: php
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www
+    networks:
+      - russian-laundry-bot
+
+  proxy:
+    build:
+      context: docker_images/proxy
+    container_name: proxy
+    restart: unless-stopped
+    ports:
+      - ${WEB_PORT:-80}:80
+      - "443:443"
+    depends_on:
+      - web
+    volumes:
+      - ./:/var/www
+      - ./docker_images/proxy:/etc/nginx/conf.d/
+    networks:
+      - russian-laundry-bot
+
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    container_name: adminer
+    networks:
+      - russian-laundry-bot
+
+  db:
+    image: mysql
+    container_name: mysql
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-db}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-password}
+      MYSQL_USER: ${DB_USERNAME:-login}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - russian-laundry-bot
+
+  ngrok:
+    build:
+      context: docker_images/ngrok
+      args:
+        NGROK_AUTHTOKEN: ${NGROK_AUTHTOKEN}
+        WEB_PORT: proxy:80
+        NGROK_DOMAIN: ${NGROK_DOMAIN}
+    restart: no
+    container_name: ngrok
+    ports:
+      - "4040:4040"
+    depends_on:
+      - proxy
+    command:
+      - "start"
+      - "--all"
+      - "--config"
+      - "/etc/ngrok.yml"
+    networks:
+      - russian-laundry-bot
+
+
+volumes:
+  dbdata:
+    driver: local
+
+networks:
+  russian-laundry-bot:
+    driver: bridge

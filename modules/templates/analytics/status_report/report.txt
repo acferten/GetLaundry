@@ -1,0 +1,18 @@
+Order statuses for the period <b>from :startDate to :endDate</b><:n>
+Amount of days: <b>:daysCount</b><:n>
+Total orders for the period: <b>:countOrders</b><:n><:n>
+
+1️⃣New orders - <b>:newOrdersCount</b><:n>
+:newOrdersUsernamesArray<:n>
+2️⃣Orders picked up by courier. - <b>:pickupOrdersCount</b><:n>
+:pickupOrdersUsernamesArray<:n>
+3️⃣Orders are weighed. On delivery. - <b>:weightOrdersCount</b><:n>
+:weightOrdersUsernamesArray<:n>
+4️⃣Orders have been delivered. Not paid. - <b>:deliveredOrdersCount</b><:n>
+:deliveredOrdersUsernamesArray<:n>
+5️⃣Orders completed and paid - <b>:paidOrdersCount</b><:n>
+:paidOrdersUsernamesArray<:n>
+0️⃣Canceled orders - <b>:denyOrdersCount</b><:n>
+:denyOrdersUsernamesArray<:n>
+🤡Not reached - <b>:notReachedOrders</b><:n>
+:notReachedUsernamesArray

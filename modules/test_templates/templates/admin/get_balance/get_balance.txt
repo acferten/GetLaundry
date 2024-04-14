@@ -1,0 +1,3 @@
+Enter the user ID in order to find out its balance
+
+<:buttons>Cancel;button;/get_balance_deny</:buttons>

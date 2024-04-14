@@ -1,0 +1,19 @@
+<:ru>
+<b>Личный баланс:</b><:n><:n>
+
+⛹️ Количество активных рефералов: <b>:referal</b><:n><:n>
+
+💰 На вашем балансе: <b>:price бонусных рублей.</b><:n><:n>
+
+При положительном балансе вы можете оплачивать стирки бонусами как частично, так и полностью. Для этого в шаге оплаты, нужно будет выбрать <b>Оплатить бонусами</b>.
+</:ru>
+
+<:eng>
+<b>Personal balance:</b><:n><:n>
+
+⛹️ Number of active referrals: <b>:referal</b><:n><:n>
+
+💰 On your bonus balance: <b>:price IDR</b><:n><:n>
+
+With a positive balance, you can pay for laundry with bonuses either partially or in full. To do this, in the payment step, you will need to select <b>Pay with bonuses</b>
+</:eng>

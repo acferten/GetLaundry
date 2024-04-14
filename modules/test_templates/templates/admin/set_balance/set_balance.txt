@@ -1,0 +1,3 @@
+Enter the user id and the number of bonuses you want to add, separated by a space. For example, 1234 100000:
+
+<:buttons>Cancel Request;button;/set_balance_deny 1</:buttons>

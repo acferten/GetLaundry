@@ -1,0 +1,6 @@
+<b>User id: :userId</b><:n>
+User login: <b>:userUsername</b><:n>
+Number: <b>:userPhone</b><:n>
+Whatsapp: <b>:userPhone</b><:n><:n>
+Bonuses will be removed in the amount: <b>:delBalance IDR</b>.<:n><:n>
+Number of user bonuses now: <b>:totalBalance IDR</b>.

@@ -1,0 +1,3 @@
+Enter the ID of the order you want to delete:
+
+<:buttons>Cancel;button;/del_balance_deny 1</:buttons>

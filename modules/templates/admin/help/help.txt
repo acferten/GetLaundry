@@ -1,0 +1,8 @@
+Admin Chat Commands
+
+<:buttons>Get balance;button;/get_balance</:buttons>
+<:buttons>Top up balance +;button;/set_balance</:buttons>
+<:buttons>Write off bonuses -;button;/del_balance</:buttons>
+<:buttons>Delete order;button;/del_order</:buttons>
+<:buttons>Mailing;button;/mailing_v2</:buttons>
+<:buttons>Mailing Testing;button;/mailing_v2 1</:buttons>

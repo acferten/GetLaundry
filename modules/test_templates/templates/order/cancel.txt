@@ -1,0 +1,22 @@
+<:ru>
+🤪<b>Не переживайте!</b><:n>
+Выберите, пожалуйста, почему вы хотите отменить заказ, чтобы мы могли учесть это в дальнейшей работе.🙌
+
+<:buttons>Просто решил проверить Бот;button;/cancel_orders_pochemy 1</:buttons>
+<:buttons>Передумал стирать;button;/cancel_orders_pochemy 2</:buttons>
+<:buttons>Переживаю за качество стирки;button;/cancel_orders_pochemy 3</:buttons>
+<:buttons>Дорого;button;/cancel_orders_pochemy 4</:buttons>
+<:buttons>Написать менеджеру;link;https://t.me/Laundrybot_Russia</:buttons>
+<:buttons>⬅️ Вернуться в заказ;button;/back_orders :orderId</:buttons>
+</:ru>
+
+<:eng>
+🤪<b>Don't worry!</b><:n>
+Please select why you want to cancel the order so that we can take it into account in future work.🙌
+
+<:buttons>Just decided to check the Bot;button;/cancel_orders_pochemy 1</:buttons>
+<:buttons>Changed my mind;button;/cancel_orders_pochemy 2</:buttons>
+<:buttons>Worried about the quality of the wash;button;/cancel_orders_pochemy 3</:buttons>
+<:buttons>Expensive;button;/cancel_orders_pochemy 4</:buttons>
+<:buttons>⬅️ Back to order;button;/back_orders :orderId</:buttons>
+</:eng>

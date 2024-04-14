@@ -1,0 +1,10 @@
+Users statuses for the period <b>from :dateStart to :dateEnd</b><:n>
+Amount of days: <b>:daysCount</b><:n>
+Total users for the period: <b>:countUsers</b><:n><:n>
+
+Logged in to the bot - :loggedInToTheBotCount<:n>
+:loggedInToTheBot<:n><:n>
+Unfinished - :unfinishedCount<:n>
+:unfinished<:n><:n>
+Made an order - :madeAnOrderCount<:n>
+:madeAnOrder

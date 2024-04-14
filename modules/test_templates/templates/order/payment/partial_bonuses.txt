@@ -1,0 +1,15 @@
+<:ru>
+🌶Вы частично оплатили заказ (<b>#:orderId</b>) бонусами.<:n><:n>
+
+<b>Остаток к оплате :sumСanPayBonusContent рублей.</b><:n><:n>
+
+Как вам удобнее будет произвести оплату оставшейся суммы?
+</:ru>
+
+<:eng>
+🌶You have partially paid for the order (<b>#:orderId</b>) with bonuses.<:n><:n>
+
+<b>Balance payable :sumСanPayBonusContent IDR</b><:n><:n>
+
+How would you like to pay the remaining amount?
+</:eng>

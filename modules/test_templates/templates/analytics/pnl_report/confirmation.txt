@@ -1,0 +1,6 @@
+<b>:dateStartText :dateEndText</b><:n><:n>
+
+Даты верны?
+
+<:buttons>Да;button;/pnl_report_success :dateStart :dateEnd</:buttons>
+<:buttons>Нет;button;/make_pnl_report</:buttons>

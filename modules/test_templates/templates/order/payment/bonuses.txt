@@ -1,0 +1,11 @@
+<:ru>
+🚀 Поздравляем вы полностью оплатили заказ (<b>#:orderId</b>) бонусами.<:n><:n>
+
+На вашем бонусном балансе осталось :remainingUserBonusCount рублей.<:n><:n>
+</:ru>
+
+<:eng>
+🚀Congratulations, you have fully paid for the order (<b>#:orderId</b>) with bonuses.<:n><:n>
+
+🚏Your bonus balance has :remainingUserBonusCount IDR.<:n><:n>
+</:eng>

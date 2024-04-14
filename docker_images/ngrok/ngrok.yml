@@ -1,0 +1,16 @@
+authtoken: {{ NGROK_AUTHTOKEN }}
+web_allow_hosts:
+  - api.telegram.org
+  - localhost
+
+version: 2
+tunnels:
+  website:
+    addr: {{ WEB_PORT }}
+    schemes:
+      - https
+    inspect: true
+    domain: {{ NGROK_DOMAIN }}
+    host_header: {{ NGROK_DOMAIN }}
+    proto: http
+

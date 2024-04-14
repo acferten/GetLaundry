@@ -1,0 +1,31 @@
+<:ru>
+Та-дам 🍾<:n>
+Ставка сыграла!<:n><:n>
+
+🏃Ваш реферал добавил в вашу копилку <b>:formattedPriceBalance</b> бонусных рублей.<:n><:n>
+
+💰Теперь на вашем балансе <b>:formattedRefUserBalance</b> бонусных рублей.<:n><:n>
+
+КАЖДЫЙ РАЗ, когда ваши друзья будут стирать вещи у нас, вы будете получать кэшбэк 10% с суммы их заказа.<:n><:n>
+Вот ваша уникальная ссылка 👇<:n>
+https://t.me/LaundryRussia_bot?start=ref:chatId
+
+<:buttons>Рекомендовать друзьям;link;https://t.me/share/url?url=https://t.me/LaundryGo_bot?start=ref:chatId</:buttons>
+<:buttons>Заказать стирку;button;/start mailing</:buttons>
+</:ru>
+
+<:eng>
+Ta-dam 🍾<:n>
+Bet played!<:n><:n>
+
+🏃Your referral has added <b>:formattedPriceBalance</b> Bonus IDR to your piggy bank.<:n><:n>
+
+💰Your balance now has <b>:formattedRefUserBalance</b> bonus Rs.<:n><:n>
+
+EVERY time your friends wash with us, you will receive 10% cashback from the amount of their order.<:n>
+Here is your unique link 👇<:n>
+https://t.me/LaundryGo_bot?start=ref:chatId
+
+<:buttons>Recommend to friends;link;https://t.me/share/url?url=https://t.me/LaundryGo_bot?start=ref:chatId</:buttons>
+<:buttons>Order laundry;button;/start mailing</:buttons>
+</:eng>

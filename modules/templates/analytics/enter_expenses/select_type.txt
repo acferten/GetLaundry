@@ -1,0 +1,16 @@
+Choose an expense category
+
+<:buttons>Detergents;button;/select_expenses_type 1</:buttons>
+<:buttons>Gas;button;/select_expenses_type 2</:buttons>
+<:buttons>Gasoline couriers;button;/select_expenses_type 3</:buttons>
+<:buttons>Bike service;button;/select_expenses_type 4</:buttons>
+<:buttons>Electricity;button;/select_expenses_type 5</:buttons>
+<:buttons>Marketing;button;/select_expenses_type 6</:buttons>
+<:buttons>Bot development;button;/select_expenses_type 7</:buttons>
+<:buttons>Household expenses;button;/select_expenses_type 8</:buttons>
+<:buttons>Laundress salary;button;/select_expenses_type 9</:buttons>
+<:buttons>Salary for couriers;button;/select_expenses_type 10</:buttons>
+<:buttons>Bobby's salary;button;/select_expenses_type 11</:buttons>
+<:buttons>Salary Admin, translator and others;button;/select_expenses_type 12</:buttons>
+<:buttons>Equipment and fixed assets;button;/select_expenses_type 13</:buttons>
+<:buttons>Cancel;button;/select_expenses_type_cancel</:buttons>

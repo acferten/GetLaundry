@@ -1,0 +1,4 @@
+Фото верно?
+
+<:buttons>✅ YES;button;/order_pickup_order_send_photo_success :orderId</:buttons>
+<:buttons>🚫 NO;button;/order_pickup_order_send_photo_deny :orderId</:buttons>

@@ -1,0 +1,49 @@
+Отчет по расходам  период :startTime по :endTime<:n><:n>
+
+🎢 Всего расходов: :totalExpenses<:n><:n>
+
+⚙️Переменные расходы: :totalVariableExpenses 👉:totalVariableExpensesPercent%<:n>
+🛠️Основные средства: :totalBasicExpenses 👉:totalBasicExpensesPercent%<:n><:n>
+
+🦾Переменные:<:n><:n>
+
+Порошки - :totalVariableExpenses1 🤙:totalVariableExpenses1Percent%<:n>
+:variableExpenses1<:n>
+
+Газ - :totalVariableExpenses2 🤙:totalVariableExpenses2Percent%<:n>
+:variableExpenses2<:n>
+
+Бензин - :totalVariableExpenses3 🤙:totalVariableExpenses3Percent%<:n>
+:variableExpenses3<:n>
+
+Ремонт байков - :totalVariableExpenses4 🤙:totalVariableExpenses4Percent%<:n>
+:variableExpenses4<:n>
+
+Электричество - :totalVariableExpenses5 🤙:totalVariableExpenses5Percent%<:n>
+:variableExpenses5<:n>
+
+Маркетинг - :totalVariableExpenses6 🤙:totalVariableExpenses6Percent%<:n>
+:variableExpenses6<:n>
+
+Разработка Бота - :totalVariableExpenses7 🤙:totalVariableExpenses7Percent%<:n>
+:variableExpenses7<:n>
+
+Хоз расходы - :totalVariableExpenses8 🤙:totalVariableExpenses8Percent%<:n>
+:variableExpenses8<:n>
+
+З/п прачкам - :totalVariableExpenses9 🤙:totalVariableExpenses9Percent%<:n>
+:variableExpenses9<:n>
+
+З/п курьерам - :totalVariableExpenses10 🤙:totalVariableExpenses10Percent%<:n>
+:variableExpenses10<:n>
+
+З/п управляющий - :totalVariableExpenses11 🤙:totalVariableExpenses11Percent%<:n>
+:variableExpenses11<:n>
+
+З/п прочие - :totalVariableExpenses12 🤙:totalVariableExpenses12Percent%<:n>
+:variableExpenses12<:n>
+
+💪Основные средства:<:n><:n>
+
+:basicExpenses13
+

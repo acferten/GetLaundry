@@ -1,0 +1,10 @@
+Analytics Chat Commands
+
+<:buttons>Enter expenses;button;/enter_expenses</:buttons>
+<:buttons>Expense report;button;/make_expenses_report</:buttons>
+<:buttons>Revenue report;button;/make_revenue_report</:buttons>
+<:buttons>Order statuses;button;/make_status_report</:buttons>
+<:buttons>Ratings report;button;/make_rating_report</:buttons>
+<:buttons>Wallet revenue;button;/make_wallet_report</:buttons>
+<:buttons>P&L report;button;/make_pnl_report</:buttons>
+<:buttons>New clients report;button;/make_users_report</:buttons>

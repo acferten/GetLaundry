@@ -1,0 +1,25 @@
+<:ru>
+🍾 Поздравляем! Вам начислено <b>:addBalance рублей</b>.<:n><:n>
+
+🔥 Теперь на вашем бонусном балансе: <b>:totalBalance рублей</b>.
+
+
+<:buttons>Заказать стирку;button;/start mailing</:buttons>
+<:buttons>Рекомендовать друзьям;link;https://t.me/share/url?url=https://t.me/LaundryGo_bot?start=ref:chatId</:buttons>
+</:ru>
+
+<:eng>
+🍾GIVE YOU <b>:addBalance IDR</b>.<:n><:n>
+
+🏝 Place your first order and pay partially with bonuses.<:n>
+For example, <b>an order for 3 kg will cost you only 160,000 IDR</b>, and not 240,000 IDR.<:n><:n>
+
+❄ Try quality laundry in Bali. Save your things from stains.<:n><:n>
+
+🛵 The courier is ready to pick up your items today and return them clean tomorrow.<:n><:n>
+
+🔥 The gift will expire in 5 days.
+
+<:buttons>Order laundry;button;/start mailing</:buttons>
+<:buttons>Recommend to friends;link;https://t.me/share/url?url=https://t.me/LaundryGo_bot?start=ref:chatId</:buttons>
+</:eng>

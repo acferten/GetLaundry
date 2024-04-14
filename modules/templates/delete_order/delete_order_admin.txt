@@ -1,0 +1,4 @@
+Delete order <b>#:orderId</b>?
+
+<:buttons>Yes;button;/delete_order_success :orderId</:buttons>
+<:buttons>No;button;/delete_order_deny :orderId</:buttons>

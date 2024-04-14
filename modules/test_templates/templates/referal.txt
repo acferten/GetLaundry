@@ -1,0 +1,38 @@
+<:ru>
+🤝<b>Рекомендуйте LaundryBot друзьям и получайте за это килограммы бесплатных стирок или живые деньги.</b><:n><:n>
+
+1. Отправляйте свою уникальную ссылку друзьям и знакомым.<:n>
+2. <b>КАЖДЫЙ РАЗ, когда ваши друзья будут стирать вещи у нас, вы будете получать кэшбэк 10% с суммы их заказа.</b><:n>
+3. Количество, приглашённых друзей не ограничено.<:n>
+4. Свой баланс бонусных рублей всегда можно посмотреть в разделе «Меню» (синяя кнопка в нижнем левом углу экрана) - 💰 Баланс бонусов<:n>
+5. В любой момент вы можете оплатить стирку Бонусными рублями как частично, так и полностью.<:n>
+6. Когда на вашем балансе больше 3000 бонусных рублей, вы можете вывести эти деньги себе на карту. Просто напишите в чат менеджеру и он расскажет как это сделать.<:n><:n>
+
+🍫<b>Отправив ссылку однажды, вы сможете обеспечить себя бесплатными стирками или получать пассивный доход.</b><:n><:n>
+
+👇<b>Вот ваша уникальная ссылка</b><:n>
+ https://t.me/LaundryRussia_bot?start=ref:chatId
+
+<:buttons>Рекомендовать другу;link;https://t.me/share/url?url=https://t.me/LaundryRussia_bot?start=ref:chatId</:buttons>
+<:buttons>Заказать стирку;button;/start mailing</:buttons>
+</:ru>
+
+
+<:eng>
+🤝<b>Recommend LaundryBot to your friends and get kilos of free laundry or real money for it.</b><:n><:n>
+
+1. Send your unique link to friends and acquaintances.<:n>
+2. EVERY TIME your friends wash with us, you will receive 10% cashback from the amount of their order.<:n>
+3. The number of invited friends is not limited.<:n>
+4. You can always see your balance of Bonus rupiah in the "Menu" section (blue button in the lower left corner of the screen) - 💰 Bonus balance<:n>
+5. You can pay all or part of your laundry with Bonus IDR at any time.<:n>
+6. When your balance is more than 300,000, you can withdraw this money to your card. Just write to the chat manager and he will tell you how to do it.<:n><:n>
+
+By submitting the link once, you can secure free laundry or earn passive income.<:n><:n>
+
+Here is your unique link 👇<:n>
+https://t.me/LaundryGo_bot?start=ref:chatId
+
+<:buttons>Recommend to friends;link;https://t.me/share/url?url=https://t.me/LaundryGo_bot?start=ref:chatId</:buttons>
+<:buttons>Order laundry;button;/start mailing</:buttons>
+</:eng>

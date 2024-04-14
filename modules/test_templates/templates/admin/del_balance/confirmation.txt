@@ -1,0 +1,11 @@
+<b>User id: :userId</b><:n>
+User login: <b>:userUsername</b><:n>
+Number: <b>:userPhone</b><:n>
+Whatsapp: <b>:userWhatsapp</b><:n><:n>
+Bonuses will be removed in the amount: <b>:delBalance IDR</b>.<:n><:n>
+The number of user bonuses will become: <b>:totalBalance IDR</b>.<:n><:n>
+
+Confirm deletion?
+
+<:buttons>Yes;button;/del_balance_success :userId :delBalanceButton</:buttons>
+<:buttons>No;button;/del_balance_deny 2</:buttons>

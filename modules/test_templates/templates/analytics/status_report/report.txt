@@ -1,0 +1,24 @@
+Order statuses for the period <b>from :startDate to :endDate</b><:n>
+Amount of days: <b>:daysCount</b><:n>
+Total orders for the period: <b>:countOrders</b><:n><:n>
+
+1️⃣New orders - <b>:newOrdersCount</b><:n>
+:newOrdersUsernamesArray<:n>
+2️⃣Orders picked up by courier. - <b>:pickupOrdersCount</b><:n>
+:pickupOrdersUsernamesArray<:n>
+3️⃣Orders placed in laundry - <b>:placedInLaundry</b><:n>
+:inLaundryUsernamesArray<:n>
+4️⃣Washing started - <b>:washingStarted</b><:n>
+:startedOrdersUsernamesArray<:n>
+5️⃣Washing finished - <b>:washingFinished</b><:n>
+:finishedOrdersUsernamesArray<:n>
+6️⃣Orders are weighed. On delivery. - <b>:weightOrdersCount</b><:n>
+:weightOrdersUsernamesArray<:n>
+7️⃣Orders have been delivered. Not paid. - <b>:deliveredOrdersCount</b><:n>
+:deliveredOrdersUsernamesArray<:n>
+8️⃣Orders completed and paid - <b>:paidOrdersCount</b><:n>
+:paidOrdersUsernamesArray<:n>
+0️⃣Canceled orders - <b>:denyOrdersCount</b><:n>
+:denyOrdersUsernamesArray<:n>
+🤡Not reached - <b>:notReachedOrders</b><:n>
+:notReachedUsernamesArray

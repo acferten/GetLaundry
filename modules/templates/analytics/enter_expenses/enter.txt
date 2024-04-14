@@ -1,0 +1,3 @@
+Enter the amount and details of expenses separated by a space
+
+<:buttons>Back;button;/enter_expenses_cancel</:buttons>

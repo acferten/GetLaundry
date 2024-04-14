@@ -1,0 +1,8 @@
+<:ru>
+<b>Шаг 4 из 5.</b><:n>
+Укажите дополнительный номер телефона или мессенджера, который вам более удобен для связи. 
+</:ru>
+<:eng>
+<b>Step 4 of 5.</b><:n>
+Write your WhatsApp number so we can contact you for sure.
+</:eng>

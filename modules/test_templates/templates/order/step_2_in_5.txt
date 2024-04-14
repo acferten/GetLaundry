@@ -1,0 +1,11 @@
+<:ru>
+<b>Шаг 2 из 5.</b><:n>
+Уточните детали места, чтобы курьеру было проще вас найти?<:n>
+🏠 Квартира, этаж, подъезд, домофон.<:n>
+</:ru>
+<:eng>
+<b>Step 2 of 5.</b><:n>
+Specify what is this location?<:n>
+What is the name of the villa or hotel?<:n>
+What is the room or villa number?
+</:eng>

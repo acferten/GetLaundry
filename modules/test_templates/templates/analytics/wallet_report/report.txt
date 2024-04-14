@@ -1,0 +1,9 @@
+Money received from <b>:startTime</b> to <b>:endTime</b><:n><:n>
+
+Cash from couriers - <b>:cashAmount IDR</b><:n>
+Card Tinkoff - <b>:tinkoffAmountIDR IDR</b> or <b>:tinkoffAmountRUB RUB</b><:n>
+Card BRI - <b>:BRIAmount IDR</b><:n>
+Payments with bonuses - <b>:bonusAmount IDR</b><:n><:n>
+
+Total paid by clients - <b>:totalAmountWithBonuses IDR</b><:n>
+Total money in wallets (no bonuses) - <b>:totalAmount IDR</b>

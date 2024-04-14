@@ -1,0 +1,8 @@
+<:ru>
+<b>Шаг 3 из 5.</b><:n>
+Нажмите ☎️<b>Отправить номер</b>, чтобы менеджер написал вам и уточнил удобное время прибытия курьера.
+</:ru>
+<:eng>
+<b>Step 3 of 5.</b><:n>
+Press the <b>'Send number'</b> button so that the courier can contact you and successfully pick up your laundry.
+</:eng>

@@ -1,0 +1,28 @@
+<:ru>
+😃 Курьер успешно забрал ваши вещи для стирки :time<:n><:n>
+
+❗️Как только вещи будут готовы, бот отправит вам информацию о весе и стоимости заказа.<:n><:n>
+
+Затем вы сможете выбрать способ оплаты:<:n>
+📎наличными курьеру.<:n>
+📎перевод на карту Тинькофф.<:n>
+📎оплата бонусами.
+
+<:buttons>Написать менеджеру;link;https://t.me/Laundrybot_Russia</:buttons>
+<:buttons>Рекомендовать друзьям;button;/set_free_orders /orders_ok_kurer :orderId 1</:buttons>
+</:ru>
+
+
+<:eng>
+😃 The courier successfully picked up your laundry at :time<:n><:n>
+
+As soon as things are ready, the bot will send you information about the weight and cost of the order.<:n><:n>
+
+You can then choose your preferred payment method:<:n>
+📎cash to the courier in IDR.<:n>
+📎transfer to an Indonesian bank card in IDR.<:n>
+📎pay with bonuses.
+
+<:buttons>Special requests for laundry;link;https://t.me/LaundryGoBot</:buttons>
+<:buttons>Recommend to friends;button;/set_free_orders /orders_ok_kurer :orderId 1</:buttons>
+</:eng>

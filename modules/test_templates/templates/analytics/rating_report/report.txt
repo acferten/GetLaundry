@@ -1,0 +1,16 @@
+Orders with a rating for the period: <b>from :startDate to :endDate</b><:n>
+Amount of days: <b>:daysCount</b><:n>
+Total orders: <b>:orderCount</b><:n>
+Total orders with rating: <b>:ratingOrderCount</b><:n>
+Average rating: <b>:averageRating</b><:n><:n>
+
+Orders with rating 1❄️- <b>:countOrdersRating1</b><:n>
+:ordersRating1UsernamesArray<:n>
+Orders with rating 2❄️- <b>:countOrdersRating2</b><:n>
+:ordersRating2UsernamesArray<:n>
+Orders with rating 3❄️- <b>:countOrdersRating3</b><:n>
+:ordersRating3UsernamesArray<:n>
+Orders with rating 4❄️- <b>:countOrdersRating4</b><:n>
+:ordersRating4UsernamesArray<:n>
+Orders with rating 5❄️- <b>:countOrdersRating5</b><:n>
+:ordersRating5UsernamesArray

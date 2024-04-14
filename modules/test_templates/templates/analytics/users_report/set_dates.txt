@@ -1,0 +1,3 @@
+Enter the report dates separated by spaces in the format dd_mm__yyyy:
+
+<:buttons>Back;button;/users_report_set_dates_cancel</:buttons>

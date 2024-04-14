@@ -1,0 +1,4 @@
+❄️ Please, select a bot language
+
+<:buttons>English;button;/user_lang eng</:buttons>
+<:buttons>Русский;button;/user_lang ru</:buttons>

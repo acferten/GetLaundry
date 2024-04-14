@@ -1,0 +1,6 @@
+<b>User id: :userId</b><:n>
+User login: <b>:userUsername</b><:n>
+Number: <b>:userPhone</b><:n>
+Whatsapp: <b>:userPhone</b><:n><:n>
+Bonuses added: <b>:addBalance IDR</b>.<:n><:n>
+Total number of user bonuses: <b>:totalBalance IDR</b>.

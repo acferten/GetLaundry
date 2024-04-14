@@ -1,0 +1,1 @@
+Order deletion canceled <b>#:orderId</b>

@@ -1,0 +1,6 @@
+<b>Заказ #:orderId</b><:n><:n>
+
+Добавить ещё фото?
+
+<:buttons>👍 ДА;button;/order_pickup_order_send_photo_scales_more_group_success :orderId</:buttons>
+<:buttons>👎 НЕТ;button;/order_pickup_order_send_photo_scales_more_group_deny :orderId</:buttons>

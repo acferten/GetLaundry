@@ -1,0 +1,51 @@
+<:ru>
+<b>Шаг 5 из 5.</b><:n><:n>
+
+❗️ВНИМАНИЕ<:n>
+Мы НЕ ХИМЧИСТКА. Мы очень качественная прачечная.<:n>
+Мы НЕ ПРИНИМАЕМ шубы, пуховики, костюмы, кожанные изделия и обувь.<:n><:n>
+
+❗️Заказ, <b>сделанный до 15:00</b>, заберём в течение дня и вернём обратно завтра днём.<:n>
+❗️Заказ, <b>сделанный после 15:00</b>, заберём завтра в течение дня и вернём обратно послезавтра.<:n><:n>
+
+<b>Прайс:</b><:n>
+👕 Одежда 1 кг. - <b>800 руб.</b><:n><:n>
+
+🤝 Постираем хоть одну рубашку, <:n>
+но <b>заказ минимум 3 кг или 2400 руб.</b><:n><:n>
+
+🍒<b>Заберём грязные вещи. Вернём стиранные. Без пятен. С приятным запахом свежести. Утюженные. Аккуратно сложенные. Посчитаем по килограммам.</b><:n><:n>
+
+<b>100% гарантия качества или вернём деньги.</b><:n><:n>
+
+👉 Нажмите <b>'Заказать стирку'</b>, чтобы подтвердить заказ.<:n>
+
+<:buttons>Заказать стирку;button;/back_orders :getAction success</:buttons>
+</:ru>
+
+
+<:eng>
+<b>Step 5 of 5.</b><:n><:n>
+
+❗️Orders placed <b>before 2pm</b> will be picked up within 2 hours and returned back tomorrow afternoon.<:n>
+❗️Orders placed <b>after 2pm</b> will be picked up tonight and returned back tomorrow evening.<:n>
+❗️Orders placed <b>after 6pm</b> will be picked up before lunch tomorrow and returned back the day after tomorrow.<:n><:n>
+
+<b>Price:</b><:n>
+👕 Clothes 1 kg. - <b>80.000 IDR.</b><:n>
+👟 A pair of shoes - <b>120.000 IDR.</b><:n>
+🛏 Bed linen and towels 1 kg. - <b>50.000 IDR.</b><:n>
+👨‍🚀 Helmet - <b>150.000 IDR.</b><:n><:n>
+
+
+🤝 Let's wash at least one T-shirt,<:n>
+but <b>order minimum 240.000 IDR.</b><:n><:n>
+
+❗️ATTENTION<:n>
+We are NOT a DRY CLEANER. We are a very good laundry.<:n>
+We DO NOT ACCEPT fur coats, down jackets, suits, baseball caps, suede or leather shoes.<:n><:n>
+
+👉 Click <b>'Order Laundry'</b> to confirm your order.<:n>
+
+<:buttons>Order Laundry;button;/back_orders :getAction success</:buttons>
+</:eng>

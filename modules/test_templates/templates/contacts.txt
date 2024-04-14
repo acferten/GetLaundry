@@ -1,0 +1,17 @@
+<:ru>
+🙋 Наши менеджеры ответят на любые вопросы, касаемо работы сервиса.<:n> 
+Нам очень важна обратная связь от вас.<:n><:n>
+
+<b>Мы работаем каждый день с 09:00 до 20:00!</b>
+<:buttons>Вернуться назад;button;/start</:buttons>
+<:buttons>Написать менеджеру;link;https://t.me/Laundrybot_Russia</:buttons>
+</:ru>
+
+<:eng>
+🙋 Our managers will answer any questions regarding the operation of the service.<:n>
+Your feedback is very important to us.<:n><:n>
+
+<b>We work from 09:00 to 20:00 every day!</b>
+<:buttons>Go back;button;/start</:buttons>
+<:buttons>Message to manager;link;https://t.me/LaundryGoBot</:buttons>
+</:eng>

@@ -1,0 +1,6 @@
+<b>:dateStartText :dateEndText</b><:n><:n>
+
+Are the dates correct?
+
+<:buttons>Yes;button;/revenue_report_success :dateStart :dateEnd</:buttons>
+<:buttons>No;button;/make_revenue_report</:buttons>

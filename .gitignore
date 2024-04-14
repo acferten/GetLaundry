@@ -1,0 +1,7 @@
+/action/*
+/mailing_logs/*
+/img/orders/*
+/img/orders_group/*
+/img/qr/*
+log.txt
+.env
