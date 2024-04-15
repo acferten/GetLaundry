@@ -22,7 +22,7 @@ RUN install-php-extensions \
             zip \
             mbstring \
             sqlite3 \
-            gd2 \
+            gd
 
 #install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
