@@ -61,11 +61,12 @@ class Bot
         // группа прачек
         define("GROUP_WASHERS_CHAT_ID", $base["system"]["group_washers_chat_id"]);
 
-        define('QIWI_PUBLIC', '48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPsyjdxs8v4vS7Vm6pAcpcCbA25SNBqrdtJUAYFmeA7Qo9RnDTnTxD5rF8bRJEqRJddKQDH3UPvjpuRfJGuh4fXkEaD2ZkAsxcaJpHXESJR');
         # Яндекс.Кошелек для приема оплаты
         define('YANDEX_MONEY', '915243:test_05DTE-_W7weZhSDqmdLIISB23Hwai0FaDgpVfoM6WoY');
+
         # Aдрес на который переадресует пользователя в случае успешного платежа
         define('PAY_SUCCESS', 't.me/devshoptaksi_bot');
+
         # Название магазина
         define('NAME_SHOP', 'Магазин SSHOP | Боты | Сайты');
 
@@ -1693,26 +1694,6 @@ class Bot
         $res = json_decode($res, true);
         return $res['confirmation']['confirmation_url'];
 
-    }
-
-
-    function getUrlQiwi($sum, $user_id, $order_id)
-    {
-
-        $content = [
-            'billId' => md5(rand(0, 1000)),
-            'amount' => $sum,
-            'currency' => 'RUB',
-            'comment' => "Оплата заказа #" . $order_id,
-            'expirationDateTime' => '2022-11-02T08:44:07+03:00',
-            'account' => $user_id,
-            'phone' => $order_id,
-            'successURL' => "https://t.me/podpiska213_bot"
-        ];
-
-        $response = "https://oplata.qiwi.com/create?publicKey=" . QIWI_PUBLIC . "&" . http_build_query($content);
-
-        return $response;
     }
 
 
