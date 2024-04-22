@@ -1,5 +1,7 @@
 <?php
 
+
+# 1 рџ‘¤ Р›РёС‡РЅС‹Р№ РєР°Р±РёРЅРµС‚
 if ($atext[0] == "/menu_lc") {
 
     $this->del_action($chat_id);
@@ -16,9 +18,12 @@ if ($atext[0] == "/menu_lc") {
         new TemplateData(":referal", $referal),
         new TemplateData(":price", $price),
     ]);
-    $template = $template->Load();
-
+    $template = $template->Load(); 
+    
     $this->sendMessage($chat_id, $template->text);
 
     return;
 }
+
+
+?>

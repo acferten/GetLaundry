@@ -1,19 +1,10 @@
 <?php
 
-/**
- * @var string $chat_id
- * @var string $message_id
- * @var string $text
- * @var string $first_name
- * @var string $last_name
- * @var string $username
- *
- */
 
 # Реферальная ссылка
 if (preg_match("~^\/start (join[\d]+|ref[\d]+)$~", $text, $matches)) {
     $command = preg_replace('/[^a-z]/', '', $matches[1]);
-
+    file_put_contents("test1", $command);
     if ($command == "ref") {
 
         $un_text = substr($matches[1], 3);
@@ -137,7 +128,7 @@ if ($atext[0] == '/start') {
     $user = R::findOne('users', 'chat_id = ?', [$chat_id]);
     $user->lang = 'ru';
     R::store($user);
-    $template = new Template("start", 'ru');
+    $template = new Template("start", $user['lang']);
 
     $template->Load();
     $template->LoadButtons();
@@ -155,7 +146,6 @@ if ($atext[0] == '/user_lang' && $atext[1]) {
     $this->DelMessageText($chat_id, $message_id);
 
     $lang = $user['lang'];
-
 
     $template = new Template("start", $lang);
     $template = $template->Load();
@@ -245,7 +235,7 @@ if ($atext[0] == '/orders_users_adress_2' || $atext[0] && $get_action[0] == 'wha
 
         # Записываем команду
         $this->set_action($chat_id, "phone&$get_action[1]");
-    } /*else if (!trim($users['whatsapp'])) {
+    } else if (!trim($users['whatsapp'])) {
 
         $buttons12[] = [
             $this->buildInlineKeyBoardButton("/", "/"),
@@ -273,7 +263,7 @@ if ($atext[0] == '/orders_users_adress_2' || $atext[0] && $get_action[0] == 'wha
         # Записываем команду
         $this->set_action($chat_id, "whatsapp&$get_action[1]");
 
-    }*/ else {
+    } else {
         $template = new Template("order/step_5_in_5", $users['lang'], [
             new TemplateData(":getAction", $get_action[1])
         ]);
@@ -536,8 +526,8 @@ if ($atext[0] == '/set_free_orders') {
     }
 
     // отправляю сообщение пользователю
-//    $this->sendPhoto($chat_id, "https://laundrybot.online/GetLaundry/img/qr/$chat_id.png?version=" . time(), $template->text, $buttons);
-    $this->sendPhoto($chat_id, "https://laundrybot.online/GetLaundry/img/qr/$chat_id.png?version=" . time(), $template->text, $template->buttons);
+//    $this->sendPhoto($chat_id, "https://laundrybot.online/bot/img/qr/$chat_id.png?version=" . time(), $template->text, $buttons);
+    $this->sendPhoto($chat_id, "https://laundrybot.online/bot/img/qr/$chat_id.png?version=" . time(), $template->text, $template->buttons);
     return;
 }
 
@@ -573,7 +563,7 @@ if ($atext[0] == '/orders_ok_kurer') {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://whatsapp.laundrybot.online/GetLaundry/webhook.php',
+            CURLOPT_URL => 'https://whatsapp.laundrybot.online/bot/webhook.php',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -868,7 +858,7 @@ if ($atext[0] == "/buy_wholesale_laundry" && $atext[1] && $atext[2]) {
             $content .= "Olga G.\n\n";
 
             // Перевожу цену в рубли и разделяю точками по разрядам
-            $price_idr = number_format($wholesale_laundry["price_idr"] / 1000 * 6.3, 0, "", ".");
+            $price_idr = number_format($wholesale_laundry["price_idr"] / 1000 * 6.2, 0, "", ".");
 
             $content .= "<b>Сумма для перевода $price_idr рублей.</b>";
             break;
@@ -1024,8 +1014,8 @@ if ($atext[0] == '/set_free_orders_menu') {
     }
 
     // отправляю сообщение пользователю
-//    $this->sendPhoto($chat_id, "https://laundrybot.online/GetLaundry/img/qr/$chat_id.png?version=" . time(), $template->text, $buttons);
-    $this->sendPhoto($chat_id, "https://laundrybot.online/GetLaundry/img/qr/$chat_id.png?version=" . time(), $template->text, $template->buttons);
+//    $this->sendPhoto($chat_id, "https://laundrybot.online/bot/img/qr/$chat_id.png?version=" . time(), $template->text, $buttons);
+    $this->sendPhoto($chat_id, "https://laundrybot.online/bot/img/qr/$chat_id.png?version=" . time(), $template->text, $template->buttons);
     return;
 }
 
@@ -1094,7 +1084,7 @@ if (isset($atext[0]) && $get_action[0] == 'orders_ves_kurer') {
 
     // Расчет стоимости
     $prices = [
-        'closes' => $weight_all['closes'] * 800,
+        'closes' => $weight_all['closes'] * 80000,
         'shoes' => $weight_all['shoes'] * 120000,
         'bed_linen' => $weight_all['bed_linen'] * 50000,
         'organic' => $weight_all['organic'] * 150000
@@ -1161,7 +1151,7 @@ if ($atext[0] == '/orders_ves_kurer_ok') {
 
     // Рассчет стоимости
     $prices = [
-        'closes' => $weight_all['closes'] * 800,
+        'closes' => $weight_all['closes'] * 80000,
         'shoes' => $weight_all['shoes'] * 120000,
         'bed_linen' => $weight_all['bed_linen'] * 50000,
         'organic' => $weight_all['organic'] * 150000
@@ -1179,7 +1169,7 @@ if ($atext[0] == '/orders_ves_kurer_ok') {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://whatsapp.laundrybot.online/GetLaundry/webhook.php',
+            CURLOPT_URL => 'https://whatsapp.laundrybot.online/bot/webhook.php',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -1269,13 +1259,23 @@ if ($atext[0] == '/orders_ves_kurer_ok') {
 
     $template->Load();
 
+    $lifepay_order_id = (int)($orders->id . $user->id . (time() % 1000));
+    $orders->lifepay_order_id = $lifepay_order_id;
+    R::store($orders);
+
     switch ($user['lang']) {
         case 'ru':
             $buttons[] = [
-                $this->buildInlineKeyBoardButton("Наличные курьеру", "/sposob_pay 1 test $get_action[0]"),
+                $this->buildInlineKeyBoardButton("Наличные курьеру в рупиях", "/sposob_pay 1 test $get_action[0]"),
             ];
             $buttons[] = [
-                $this->buildInlineKeyBoardButton("Перевод на Тинькоф", "/sposob_pay 2 $unformatted_total_price $get_action[0]"),
+                $this->buildInlineKeyBoardButton("Перевод на BRI в рупиях", "/sposob_pay 2 $unformatted_total_price $get_action[0]"),
+            ];
+            $buttons[] = [
+                $this->buildInlineKeyBoardButton("Перевод на Тинькофф в рублях", "/sposob_pay 3 $unformatted_total_price $get_action[0]"),
+            ];
+            $buttons[] = [
+                $this->buildInlineKeyBoardButton("Оплата по СБП", "", "https://partner.life-pay.ru/alba/input/?name=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D1%83%D1%81%D0%BB%D1%83%D0%B3+%D0%BF%D1%80%D0%B0%D1%87%D0%B5%D1%87%D0%BD%D0%BE%D0%B9+LaundryBot&cost={$total_price}&key=KFBsJSEbBdjuZM4r4u9HpMTYWE%2FvPpBNAAN6%2FYJgl5w%3D&default_email=&prepayment_page=0&order_id={$lifepay_order_id}"),
             ];
             $buttons[] = [
                 $this->buildInlineKeyBoardButton("Оплатить бонусами", "/sposob_pay 4 $unformatted_total_price $get_action[0]"),
@@ -1347,8 +1347,8 @@ if ($atext[0] == '/sposob_pay') {
     switch ($pay_type) {
         case 1:
             if ($user['lang'] == 'ru') {
-                $content1 .= "🙏Благодарим за выбранный способ оплаты!\n
-💸Передайте данную сумму нашему курьеру. У курьера всегда имеется с собой сдача.";
+                $content1 .= "🙏Благодарим за выбранный способ оплаты!\n\n
+💸Передайте данную сумму нашему курьеру или оставьте стаффу на ресепшене. У курьера всегда имеется с собой сдача.";
             } else {
                 $content1 .= "🙏Thank you for choosing the payment method!\n\n
 💸Give this amount to our courier or leave the staff at the reception. The courier always has change with him.";
@@ -1361,18 +1361,14 @@ if ($atext[0] == '/sposob_pay') {
         case 2:
             # Отправляем смс
             if ($user['lang'] == 'ru') {
-                $content1 .= "💸 Вот данные для перевода на карту Тинькофф.\n
-👉 По номеру телефона
-+79027816905
-            
-👉 По номеру карты\n";
-                $content1 .= "2200 7010 0440 8404 \n";
-                $content1 .= "Валентина С. \n\n";
-                $content1 .= "🧾 После того как переведёте, пришлите, пожалуйста, чек об оплате в чат менеджеру или покажите курьеру.\n\n";
+                $content1 .= "💳 Вот данные для перевода на карту индонезийского банка BRI в рупиях.\n\n";
+                $content1 .= "4628 0100 4036 508 \n";
+                $content1 .= "Anak Agung Gede Adi Semara \n\n";
+                $content1 .= "🧾 После того как переведёте, пришлите, пожалуйста, чек об оплате в чат менеджеру.\n\n";
 
                 $content_sum = number_format($atext[2], 0, "", ".");
 
-                $content1 .= "<b>Сумма для перевода $content_sum рублей.</b>";
+                $content1 .= "<b>Сумма для перевода $content_sum рупий</b>";
             } else {
                 $content1 .= "💳 Here is the data for the transfer to the card of the Indonesian bank BRI in IDR.\n\n";
                 $content1 .= "If you are transferring from an Indonesian bank card, then use <b>the account number</b>.\n";
@@ -1394,18 +1390,13 @@ if ($atext[0] == '/sposob_pay') {
             ];*/
             break;
         case 3:
-            $sum = number_format($atext[2] / 1000 * 6.3, 0, "", ".");
+            $sum = number_format($atext[2] / 1000 * 6.2, 0, "", ".");
 
             # Отправляем смс
-            $content1 .= "💸 Вот данные для перевода на карту Тинькофф.\n
-После того как переведёте, пришлите, пожалуйста, чек об оплате в чат менеджеру или покажите курьеру.\n
-👉 По номеру телефона
-+79027816905
-            
-👉 По номеру карты
-";
-            $content1 .= "2200 7010 0440 8404 \n";
-            $content1 .= "Валентина С. \n\n";
+            $content1 .= "Вот данные для перевода на карту Тинькофф в рублях. 
+После того как переведёте, пришлите, пожалуйста, чек об оплате в чат менеджеру.\n\n";
+            $content1 .= "2200 7007 7932 1818 \n";
+            $content1 .= "Olga G. \n\n";
             $content1 .= "<b>Сумма для перевода $sum рублей.</b>";
 
             $content_admin .= "<b>ℹ️ Order: #$atext[3]</b> \n\n";
@@ -1419,21 +1410,21 @@ if ($atext[0] == '/sposob_pay') {
             if ($user) {
                 if ($user['lang'] == 'ru') {
                     $user_balance = number_format($user["balance"], 0, "", ".");
-                    $content_user = "<b>Ваш бонусный баланс равен $user_balance рублей.</b>\n\n";
+                    $content_user = "<b>Ваш бонусный баланс равен $user_balance IDR</b>\n\n";
 
                     $order_sum = number_format($atext[2], 0, "", ".");
-                    $content_user .= "Сумма заказа (<b>#$order_id</b>): $order_sum рублей.\n\n";
+                    $content_user .= "Сумма заказа (<b>#$order_id</b>): $order_sum IDR\n";
 
                     if ($atext[2] > $user["balance"]) {
-                        $content_user .= "Вы можете оплатить бонусами {$user["balance"]} рублей.\n\n";
+                        $content_user .= "Вы можете оплатить бонусами {$user["balance"]} IDR\n\n";
                         $order_remaining_sum = $atext[2] - $user["balance"];
                     } else {
-                        $content_user .= "Вы можете оплатить бонусами $order_sum рублей.\n\n";
+                        $content_user .= "Вы можете оплатить бонусами $order_sum IDR\n\n";
                         $order_remaining_sum = 0;
                     }
 
                     $order_remaining_sum_content = number_format($order_remaining_sum, 0, "", ".");
-                    $content_user .= "<b>Остаток к оплате будет $order_remaining_sum_content рублей.</b>\n\n";
+                    $content_user .= "<b>Остаток к оплате будет $order_remaining_sum_content IDR</b>\n\n";
 
                     $content_user .= "Подтверждаете списание бонусов за данный заказ?";
 
@@ -1483,7 +1474,7 @@ if ($atext[0] == '/sposob_pay') {
 
     if ($user['lang'] == 'ru') {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Написать менеджеру", " ", "https://t.me/Laundrybot_Russia"),
+            $this->buildInlineKeyBoardButton("Написать менеджеру", " ", "https://t.me/LaundryGoBot"),
         ];
     } else {
         $buttons[] = [
@@ -1546,10 +1537,13 @@ if ($atext[0] == "/pay_type_bonus_deny" && $atext[1]) {
 
     if ($user['lang'] == 'ru') {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Наличные курьеру", "/sposob_pay 1 test $order_id"),
+            $this->buildInlineKeyBoardButton("Наличные курьеру в рупиях", "/sposob_pay 1 test $order_id"),
         ];
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Перевод на Тинькоф", "/sposob_pay 2 $price $order_id"),
+            $this->buildInlineKeyBoardButton("Перевод на BRI в рупиях", "/sposob_pay 2 $price $order_id"),
+        ];
+        $buttons[] = [
+            $this->buildInlineKeyBoardButton("Перевод на Тинькофф в рублях", "/sposob_pay 3 $price $order_id"),
         ];
         $buttons[] = [
             $this->buildInlineKeyBoardButton("Оплатить бонусами", "/sposob_pay 4 $price $order_id"),
@@ -1593,10 +1587,13 @@ if ($atext[0] == "/pay_type_bonus_success" && $atext[1]) {
             case 'ru':
                 $buttons = [
                     [
-                        $this->buildInlineKeyBoardButton("Наличные курьеру", "/sposob_pay 1 test $order_id"),
+                        $this->buildInlineKeyBoardButton("Наличные курьеру в рупиях", "/sposob_pay 1 test $order_id"),
                     ],
                     [
-                        $this->buildInlineKeyBoardButton("Перевод на Тинькоф", "/sposob_pay 2 $sum_can_pay_bonus $order_id"),
+                        $this->buildInlineKeyBoardButton("Перевод на индонезийскую карту в рупиях", "/sposob_pay 2 $sum_can_pay_bonus $order_id"),
+                    ],
+                    [
+                        $this->buildInlineKeyBoardButton("Перевод на Тинькофф в рублях", "/sposob_pay 3 $sum_can_pay_bonus $order_id"),
                     ],
                 ];
                 break;
@@ -1625,7 +1622,7 @@ if ($atext[0] == "/pay_type_bonus_success" && $atext[1]) {
             case 'ru':
                 $buttons_user = [
                     [
-                        $this->buildInlineKeyBoardButton("Написать менеджеру", " ", "https://t.me/Laundrybot_Russia"),
+                        $this->buildInlineKeyBoardButton("Написать менеджеру", " ", "https://t.me/LaundryGoBot"),
                     ],
                 ];
                 break;
@@ -1689,19 +1686,19 @@ if ($atext[0] == "/orders_report" && $atext[1]) {
 
     if ($order['photo_before']) {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Фотография заказа", "", "https://laundrybot.online/GetLaundry/" . $order['photo_before']),
+            $this->buildInlineKeyBoardButton("Pickup photo", "", "https://laundrybot.online/bot/" . $order['photo_before']),
         ];
     }
 
     if ($order['photo_in_laundry']) {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Фото в лаундри", "", "https://laundrybot.online/GetLaundry/" . $order['photo_in_laundry']),
+            $this->buildInlineKeyBoardButton("Photo in laundry", "", "https://laundrybot.online/bot/" . $order['photo_in_laundry']),
         ];
     }
 
     if ($order['video_before_washing']) {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Фото перед стиркой", "", "https://laundrybot.online/GetLaundry/" . $order['video_before_washing']),
+            $this->buildInlineKeyBoardButton("Photo before washing", "", "https://laundrybot.online/bot/" . $order['video_before_washing']),
         ];
     }/* else {
         $buttons[] = [
@@ -1711,7 +1708,7 @@ if ($atext[0] == "/orders_report" && $atext[1]) {
 
     if ($order['video_after_washing']) {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Фото после стирки", "", "https://laundrybot.online/GetLaundry/" . $order['video_after_washing']),
+            $this->buildInlineKeyBoardButton("Photo after washing", "", "https://laundrybot.online/bot/" . $order['video_after_washing']),
         ];
     }/* else {
         $buttons[] = [
@@ -1721,13 +1718,13 @@ if ($atext[0] == "/orders_report" && $atext[1]) {
 
     if ($order['photo_on_the_scales']) {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Фото на весах", "/photo_on_the_scales $orderId"),
+            $this->buildInlineKeyBoardButton("Weight", "/photo_on_the_scales $orderId"),
         ];
     }
 
     if ($order['delivered_photo']) {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Фото доставленного заказа", "/photo_of_the_delivered $orderId"),
+            $this->buildInlineKeyBoardButton("Delivered", "/photo_of_the_delivered $orderId"),
         ];
     }
 
@@ -1738,7 +1735,7 @@ if ($atext[0] == "/orders_report" && $atext[1]) {
     */
 
     $buttons[] = [
-        $this->buildInlineKeyBoardButton("Назад", "/cancel_osob_end $orderId"),
+        $this->buildInlineKeyBoardButton("Back", "/cancel_osob_end $orderId"),
     ];
 
     $this->editMessageReplyMarkup($chat_id, $message_id, $buttons);
@@ -1783,10 +1780,10 @@ if ($atext[0] == "/photo_on_the_scales" && $atext[1]) {
 
     if (count($photos) > 0) {
         foreach ($photos as $key => $photo) {
-            $content .= "<a href='https://laundrybot.online/GetLaundry/$photo[photo]'>Photo #" . ($key + 1) . "</a>\n";
+            $content .= "<a href='https://laundrybot.online/bot/$photo[photo]'>Photo #" . ($key + 1) . "</a>\n";
             /*
             $content = "Фото #".($key+1);
-            $this->sendPhoto($chat_id, "https://laundrybot.online/GetLaundry/" . $photo['photo'], $content, $buttons);
+            $this->sendPhoto($chat_id, "https://laundrybot.online/bot/" . $photo['photo'], $content, $buttons);
             */
         }
     } else {
@@ -1816,10 +1813,10 @@ if ($atext[0] == "/photo_of_the_delivered" && $atext[1]) {
 
     if (count($photos) > 0) {
         foreach ($photos as $key => $photo) {
-            $content .= "<a href='https://laundrybot.online/GetLaundry/$photo[photo]'>Photo #" . ($key + 1) . "</a>\n";
+            $content .= "<a href='https://laundrybot.online/bot/$photo[photo]'>Photo #" . ($key + 1) . "</a>\n";
             /*
             $content = "Фото #".($key+1);
-            $this->sendPhoto($chat_id, "https://laundrybot.online/GetLaundry/" . $photo['photo'], $content, $buttons);
+            $this->sendPhoto($chat_id, "https://laundrybot.online/bot/" . $photo['photo'], $content, $buttons);
             */
         }
     } else {
@@ -1854,11 +1851,11 @@ if ($atext[0] == "/print_check_admin" && $atext[1]) {
             ];
 
 
-            $this->sendPhoto(ID_CHAT, "https://laundrybot.online/GetLaundry/" . $order['check_order'], $content, $buttons);
+            $this->sendPhoto(ID_CHAT, "https://laundrybot.online/bot/" . $order['check_order'], $content, $buttons);
 
         } else {
             if ($chat_id == ID_CHAT || $chat_id == GROUP_COURIER_CHAT_ID || $chat_id == GROUP_WASHERS_CHAT_ID) {
-                $this->sendPhoto($chat_id, "https://laundrybot.online/GetLaundry/" . $order['check_order'], $content);
+                $this->sendPhoto($chat_id, "https://laundrybot.online/bot/" . $order['check_order'], $content);
             }
         }
     } else {

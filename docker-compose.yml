@@ -1,3 +1,5 @@
+version: "3"
+
 services:
   web:
     build:
@@ -32,8 +34,20 @@ services:
     networks:
       - russian-laundry-bot
 
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - russian-laundry-bot
+
+
   db:
-    image: mysql
+    image: mysql:5.7.20
     container_name: mysql
     restart: unless-stopped
     command: --default-authentication-plugin=mysql_native_password

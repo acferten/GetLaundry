@@ -33,7 +33,6 @@ class Bot
 
         // в любом случае вернем true для бот апи
         return true;
-
     }
 
     public function router($data)
@@ -112,9 +111,6 @@ class Bot
                             if ($atext[1] == 'cancel_orders') {
                                 return;
                             }
-
-                            # Удаляем прошлое смс
-                            # $this->DelMessageText($chat_id, $message_id);
 
                             # Кнопка
                             $buttons[] = [
@@ -284,6 +280,7 @@ class Bot
                                 $this->set_action($chat_id, "photo&$get_action[1]&$mess&$photo_caption");
                             }
 
+
                             return;
                         }
                     }
@@ -322,9 +319,7 @@ class Bot
                             # Удаляем прошлое сообщение
                             # $this->DelMessageText($chat_id, $message_id);
 
-                            $content .= "<b>Шаг 4 из 5.</b><:n>
-Укажите дополнительный номер телефона или мессенджера, который вам более удобен для связи. 
-";
+                            $content .= "Пришлите дополнительно номер WhatsApp, чтобы мы точно с вами связались";
 
                             $this->sendMessage($chat_id, $content);
 
@@ -430,23 +425,6 @@ class Bot
             }
         }
 
-        #$this->sendMessage($chat_id, "<b>Подтвердите действие:</b>". $_SERVER['DOCUMENT_ROOT']);
-
-        /* # Кнопка подтверждение
-         if ($atext[0] == "confirm") {
-
-             if ($atext[1] == "no") {
-                 $this->DelMessageText($chat_id, $message_id);
-                 return false;
-             }
-
-             $buttons[] = [
-                 $this->buildInlineKeyBoardButton("Да", "$atext[1] $atext[2] $atext[3] $atext[4]"),
-                 $this->buildInlineKeyBoardButton("Нет", "confirm no"),
-             ];
-             $this->sendMessage($chat_id, "<b>Подтвердите действие:</b>", $buttons);
-         }
-         */
 
         #  send_osob1 video
         if ($atext[0] == '/send_osob1') {
@@ -566,21 +544,19 @@ class Bot
             }
 
         }
-
         return true;
+
     }
 
 
     function set_metrika($chat_id, $count_n)
     {
-
         $metrika = R::dispense('metrika');
         // Заполняем объект свойствами
         $metrika->chat_id = $chat_id;
         $metrika->count_n = $count_n;
         // Сохраняем объект
         R::store($metrika);
-
     }
 
     function sendVoice($chat_id, $caption, $text)
@@ -591,7 +567,6 @@ class Bot
             'parse_mode' => 'html',
             'voice' => $text
         ];
-
 
         return $send = $this->requestToTelegram($content, "sendVoice");
     }
@@ -609,20 +584,18 @@ class Bot
 
     function sendMediaGroup($chat_id, $caption, array $btn)
     {
-
         $content = [
             'chat_id' => $chat_id,
             'media' => json_encode($btn, true),
         ];
+
         // отправляем запрос на удаление
         return $send = $this->requestToTelegram($content, "sendMediaGroup");
-
     }
 
     # Отправка заказа в чат
-    function sendOrdersAdmin($chat, $ids_number, $username)
+    function sendOrdersAdmin($chat, $ids_number)
     {
-
         $orders = R::findOne('orders', "id = $ids_number");
 
         if ($orders['paid'] == 1) {
@@ -835,6 +808,7 @@ class Bot
         if (!$order_report) {
             $buttons[] = [
                 $this->buildInlineKeyBoardButton("📥Отчет по заказу", "/orders_report $orders[id]"),
+                $this->buildInlineKeyBoardButton("Написать пользователю", "/request_message_to_user $orders[chat_id]"),
             ];
         }
 
@@ -893,7 +867,6 @@ class Bot
                 $send = $this->sendMessage($chat, $content, $buttons);
                 break;
         }
-
 
         $mess_id = $send['result']['message_id'];
         $set_orders = R::findOne('orders', "id = $orders[id]");
@@ -971,6 +944,7 @@ class Bot
 
         $buttons[] = [
             $this->buildInlineKeyBoardButton("📥Отчет по заказу", "/orders_report $order[id]"),
+            $this->buildInlineKeyBoardButton("Написать пользователю", "/request_message_to_user $order[chat_id]")
         ];
 
         # Отправить смс
@@ -983,14 +957,12 @@ class Bot
 
     function ban($chat_id)
     {
-
         $users = R::findOne('users', 'chat_id = ?', [$chat_id]);
 
         if ($users['ban'] == 2) {
             $this->sendMessage($chat_id, "<b>Вы заблокированы.</b>");
             exit;
         }
-
     }
 
     function getUrl($sum, $user_id, $order_id = "Личный кабинет")
@@ -1034,13 +1006,11 @@ class Bot
             #$this->sendMessage($chat_id, "Доступ запрещен!8");
             return exit;
         }
-
     }
 
     # Добавляем
     public function get_orders($ids, $command, $text)
     {
-
         $seach_orders = R::findOne('orders', "id = $ids");
 
         if (!$seach_orders) {
@@ -1112,6 +1082,7 @@ class Bot
 
         R::store($orders);
 
+
         return $t;
     }
 
@@ -1121,8 +1092,9 @@ class Bot
     {
         if ($mysql_status == 1) {
             $rb = R::setup("mysql:host=$mysql_ip;dbname=$mysql_dbname", $mysql_dbuser, $mysql_password);
+
+            return 1;
         }
-        return R::testConnection();
     }
 
     function action($text, $action)
@@ -1170,50 +1142,6 @@ class Bot
         $response = file_get_contents('https://sshop-m.ru/api/key/' . TOKEN_CS . '/action/' . $command);
         return $obj = json_decode($response, true);
     }
-
-
-    function isMembervk($user_id, $group_id)
-    {
-        $content = [
-            'group_id' => $group_id,
-            'user_id' => $user_id,
-            'extended' => '1',
-            'random_id' => rand(-2147483648, 2147483647)
-        ];
-
-        $result = $this->requestVk($content, "groups.isMember");
-
-        return $result['response']['member'];
-    }
-
-    function sendMessagevk($user_id, $text)
-    {
-        $content = [
-            'user_ids' => $user_id,
-            'message' => $text,
-            'random_id' => rand(-2147483648, 2147483647)
-        ];
-
-
-        return $send = $this->requestVk($content, "messages.send");
-    }
-
-    function requestVk($data, $type)
-    {
-        $result = null;
-
-        if (is_array($data)) {
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.vk.com/method/' . $type . '?access_token=' . TOKENVK . '&v=' . VK_VERSION);
-            curl_setopt($ch, CURLOPT_POST, count($data));
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-            $result = curl_exec($ch);
-            curl_close($ch);
-        }
-        return $result1 = json_decode($result, true);
-    }
-
 
     /** кнопка клавиатуры номер телефона и геолокация
      * @param $text
@@ -1329,7 +1257,8 @@ class Bot
             'parse_mode' => 'html',
             'disable_web_page_preview' => 'true'
         ];
-        // если переданы кнопки, то добавляем их к сообщению
+
+        // Если переданы кнопки, то добавляем их к сообщению
         if (!is_null($buttons) && is_array($buttons)) {
             if ($params == 1) {
                 $content['reply_markup'] = $this->buildInlineKeyBoard($buttons);
@@ -1340,7 +1269,7 @@ class Bot
             }
         }
 
-        return $send = $this->requestToTelegram($content, "sendMessage");
+        return $this->requestToTelegram($content, "sendMessage");
     }
 
     /*
@@ -1363,7 +1292,8 @@ class Bot
             'text' => $text,
             'parse_mode' => 'html'
         ];
-        // если переданны кнопки то добавляем их к сообщению
+
+        // Если переданы кнопки, то добавляем их к сообщению
         if (!is_null($buttons) && is_array($buttons)) {
             if ($params == 1) {
                 $content['reply_markup'] = $this->buildInlineKeyBoard($buttons);
@@ -1372,7 +1302,7 @@ class Bot
             }
         }
 
-        return $send = $this->requestToTelegram($content, "editMessageText");
+        return $this->requestToTelegram($content, "editMessageText");
     }
 
 
@@ -1384,7 +1314,7 @@ class Bot
             'caption' => $text,
             'parse_mode' => 'html'
         ];
-        // если переданы кнопки, то добавляем их к сообщению
+        // Если переданы кнопки, то добавляем их к сообщению
         if (!is_null($buttons) && is_array($buttons)) {
             if ($params == 1) {
                 $content['reply_markup'] = $this->buildInlineKeyBoard($buttons);
@@ -1393,7 +1323,7 @@ class Bot
             }
         }
 
-        return $send = $this->requestToTelegram($content, "editMessageMedia");
+        return $this->requestToTelegram($content, "editMessageMedia");
     }
 
 
@@ -1414,7 +1344,7 @@ class Bot
             'chat_id' => $chat_id,
             'message_id' => $message_id
         ];
-        // если переданны кнопки то добавляем их к сообщению
+        // Если переданы кнопки, то добавляем их к сообщению
         if (!is_null($buttons) && is_array($buttons)) {
             if ($params == 1) {
                 $content['reply_markup'] = $this->buildInlineKeyBoard($buttons);
@@ -1422,7 +1352,7 @@ class Bot
                 $content['reply_markup'] = $this->buildKeyBoard($buttons);
             }
         }
-        return $send = $this->requestToTelegram($content, "editMessageReplyMarkup");
+        return $this->requestToTelegram($content, "editMessageReplyMarkup");
     }
 
     /*
@@ -1433,9 +1363,8 @@ class Bot
     Пример:
         $this->DelMessageText($chat_id, $message_id);
     */
-    private function DelMessageText($chat_id, $message_id)
+    function DelMessageText($chat_id, $message_id)
     {
-
         // готовим данные
         $content = [
             'chat_id' => $chat_id,
@@ -1468,7 +1397,7 @@ class Bot
             'reply_markup' => json_encode(['force_reply' => true], ['selective' => '2']),
             'parse_mode' => 'Markdown'
         ];
-        // если переданны кнопки то добавляем их к сообщению
+        // Если переданы кнопки, то добавляем их к сообщению
         if (!is_null($buttons) && is_array($buttons)) {
             if ($params == 1) {
                 $content['reply_markup'] = $this->buildInlineKeyBoard($buttons);
@@ -1508,7 +1437,7 @@ class Bot
             'parse_mode' => 'html',
         ];
 
-        // если переданны кнопки то добавляем их к сообщению
+        // Если переданы кнопки, то добавляем их к сообщению
         if (!is_null($buttons) && is_array($buttons)) {
             $content['reply_markup'] = $this->buildInlineKeyBoard($buttons);
         }
@@ -1525,7 +1454,7 @@ class Bot
             'parse_mode' => 'html',
         ];
 
-        // если переданны кнопки то добавляем их к сообщению
+        // Если переданы кнопки, то добавляем их к сообщению
         if (!is_null($buttons) && is_array($buttons)) {
             $content['reply_markup'] = $this->buildInlineKeyBoard($buttons);
         }
@@ -1585,14 +1514,10 @@ class Bot
             # Копируем картинки на фтп
             $r = copy($file_from_tgrm, "img/orders/$ids_orders/" . $name_our_new_file);
         }
-
-        # $this->sendMessage($chat_id, "$file_from_tgrm | $name_our_new_file");
-        # $this->sendMessage($chat_id, "$count ff");
-
     }
 
 
-    // функция получения местонахождения файла
+    // функция получения метонахождения файла
     function getPhotoPath1($file_id)
     {
         // получаем объект File
@@ -1616,9 +1541,7 @@ class Bot
     // копируем фото к себе
     function copyPhoto1($file_path, $chat_id, $caption, $ids_orders)
     {
-
-
-        # ссылка на файл в телеграм
+        # ссылка на файл в телеграме
         $file_from_tgrm = "https://api.telegram.org/file/bot" . TOKEN . "/" . $file_path;
         # достаем расширение файла
         $ext = end(explode(".", $file_path));
@@ -1696,7 +1619,6 @@ class Bot
 
     }
 
-
     function GeoMaps($x, $y)
     {
         $parameters = array(
@@ -1726,10 +1648,8 @@ class Bot
 
     function getMe()
     {
-
         $response = file_get_contents('https://api.telegram.org/bot' . TOKEN . '/getMe');
         return $obj = json_decode($response, true);
-
     }
 
     /** Отправляем запрос в Телеграмм
@@ -1834,6 +1754,43 @@ class Bot
         return "img/orders_group/{$order["id"]}/$newFileName";
     }
 
+    private function getFileId($data)
+    {
+        return $data["message"]["photo"][count($data["message"]["photo"]) - 1]["file_id"];
+    }
+
+
+    private function sendOnlyPhoto(int $chat_id, string $photo, string $caption = null, array $buttons = null)
+    {
+        $content = [
+            'chat_id' => $chat_id,
+            'photo' => $photo,
+            'parse_mode' => 'html',
+        ];
+
+        if (!is_null($caption)) {
+            $content['caption'] = $caption;
+        }
+        if (!is_null($buttons) && is_array($buttons)) {
+            $content['reply_markup'] = $this->buildInlineKeyBoard($buttons);
+        }
+
+        return $this->requestToTelegram($content, "sendPhoto");
+    }
+
+
+    private function editMessageCaption(array $data): Bot
+    {
+        $request = [
+            'chat_id' => $data['chat_id'],
+            'message_id' => $data['message_id'],
+            'caption' => $data['caption'],
+            'reply_markup' => $data['reply_markup'],
+            'parse_mode' => 'html'
+        ];
+
+        return $this->requestToTelegram($request, 'editMessageCaption');
+    }
 }
 
 

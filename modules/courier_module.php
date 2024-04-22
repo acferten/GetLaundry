@@ -43,7 +43,9 @@ if ($chat_id == COURIER_CHAT_ID) {
         $order = R::findOne("orders", "id = $orderId");
         $user = R::findOne("users", "chat_id = {$order["chat_id"]}");
 
+        file_put_contents("BB.txt", "GG 1" . PHP_EOL);
         $newPhotoName = $this->saveFile($data, $user);
+        file_put_contents("BB.txt", "GG 2" . PHP_EOL, FILE_APPEND);
 
         $order["pickup_photo"] = $newPhotoName;
         R::store($order);
@@ -54,10 +56,10 @@ if ($chat_id == COURIER_CHAT_ID) {
 
         $template = $template->Load();
         $template->LoadButtons();
-
+        file_put_contents("BB.txt", "GG 3" . PHP_EOL, FILE_APPEND);
 //        https://laundrybot.online/bot/img/qr/$chat_id.png?version=" . time()
         $response = $this->sendPhoto($chat_id, "https://laundrybot.online/bot/" . $newPhotoName, $template->text, $template->buttons);
-
+        file_put_contents("BB.txt", "GG 4 " . json_encode($response) . PHP_EOL . json_encode($template->buttons), FILE_APPEND);
         return;
     }
 
