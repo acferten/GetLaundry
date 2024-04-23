@@ -604,6 +604,9 @@ class Bot
             $paid = "<b>paid by BRI Bank card.</b>";
         } else if ($orders['paid'] == 3) {
             $paid = "<b>на Тинькофф</b>";
+        } else if ($orders["paid"] == 5) {
+            $payment = "sbp";
+            $paid = "<b>Оплачено по СБП.</b>";
         }
 
         if ($orders['payment'] == 1) {
@@ -615,8 +618,10 @@ class Bot
         } else if ($orders["payment"] == 4) {
             $payment = "bonuses";
             $paid = "<b>Оплачено бонусами.</b>";
+        } else if ($orders["payment"] == 5) {
+            $payment = "sbp";
+            $paid = "<b>Оплачено по СБП.</b>";
         }
-
 
         if ($orders['otziv'] == 1) {
             $otziv = "1 ❄️ ";
@@ -1021,7 +1026,7 @@ class Bot
             $set_orders->about_p = " ";
             $set_orders->time_start = " ";
             $set_orders->time_end = " ";
-            $set_orders->otziv = " ";
+            $set_orders->otziv = 0;
             $set_orders->comments = " ";
             $set_orders->status = 0;
             $get_id = R::store($set_orders);
