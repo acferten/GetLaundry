@@ -63,7 +63,7 @@ class Bot
         # Яндекс.Кошелек для приема оплаты
         define('YANDEX_MONEY', '915243:test_05DTE-_W7weZhSDqmdLIISB23Hwai0FaDgpVfoM6WoY');
 
-        # Aдрес на который переадресует пользователя в случае успешного платежа
+        # Адрес, на который переадресует пользователя в случае успешного платежа
         define('PAY_SUCCESS', 't.me/devshoptaksi_bot');
 
         # Название магазина
@@ -94,7 +94,7 @@ class Bot
                 $text = $data['message']['text'];
 
 
-                if (isset($data['message']['photo'])) { # При отправки фото в чат
+                if (isset($data['message']['photo'])) { # При отправке фото в чат
 
                     $photo = $data['message']['photo'];
                     $photo_caption = $data['message']['caption'];
@@ -196,11 +196,11 @@ class Bot
                 } else if (isset($data['message']['new_chat_participant'])) { # Событие "приглашение в группу"
                     $first_name_chat = $data['message']['new_chat_participant']['first_name'];
                     $last_name_chat = $data['message']['new_chat_participant']['last_name'];
-                } elseif (isset($data['message']['document'])) { # При отправки документа в чат
+                } elseif (isset($data['message']['document'])) { # При отправке документа в чат
                     return $data['message']['document']['file_id'];
-                } elseif (isset($data['message']['sticker'])) { # При отправки стикера в чат
+                } elseif (isset($data['message']['sticker'])) { # При отправке стикера в чат
                     return $data['message']['sticker']['file_id'];
-                } elseif (isset($data['message']['voice'])) { # При отправки
+                } elseif (isset($data['message']['voice'])) { # При отправке
 
                     # Команда пользователя из файла
                     @$get_action = explode("&", ($this->get_action($chat_id)));
@@ -254,7 +254,7 @@ class Bot
                                 $this->buildInlineKeyBoardButton("🚫 NO", "/cancel_osob_end $get_action[1]"),
                             ];
 
-                            # Выводим инфорацию о объявлении
+                            # Выводим информацию об объявлении
                             $orders = R::findOne('orders', "id = $get_action[1]");
 
                             $this->getPhoto1($data['message']['video']['file_id'], $chat_id, $photo_caption, $get_action[1]);
@@ -286,7 +286,7 @@ class Bot
                     }
 
 
-                } elseif (isset($data['message']['contact'])) { # При отправки номера телефона в чат
+                } elseif (isset($data['message']['contact'])) { # При отправке номера телефона в чат
 
                     # Команда пользователя из файла
                     $get_action_phone = explode("&", ($this->get_action($chat_id)));
@@ -329,7 +329,7 @@ class Bot
                         }
                     }
 
-                } elseif (isset($data['message']['location'])) { # При отправки локаций в чат
+                } elseif (isset($data['message']['location'])) { # При отправке локаций в чат
 
                     $get_action_geo = explode("&", ($this->get_action($chat_id)));
                     $x = $data['message']['location']['longitude'];
@@ -367,7 +367,7 @@ class Bot
                         $this->set_action($chat_id, "address_2&$get_id");
                     }
 
-                } elseif (isset($data['message']['reply_to_message'])) { # При отправки пересылке смс
+                } elseif (isset($data['message']['reply_to_message'])) { # При отправке пересылке смс
                     $reply_to_id = $data['message']['reply_to_message']['chat']['id'];
                     $reply_to_id_support = $data['message']['reply_to_message']['entities']['2']['user']['id'];
                     $reply_to_text = $data['message']['reply_to_message']['text'];
@@ -411,20 +411,14 @@ class Bot
 
         ###########################################################################
 
-        # Проверка на регистрацию пользователя
-        //$this->ban($chat_id);
-
-
         # Загружаем модули
         foreach (glob(__DIR__ . '/modules/*.php') as $file) {
             if (is_file($file)) {
-                # $this->sendMessage($chat_id, "dff $file", $buttons);
                 include_once $file;
             } else {
                 return 0;
             }
         }
-
 
         #  send_osob1 video
         if ($atext[0] == '/send_osob1') {
@@ -664,11 +658,9 @@ class Bot
             $content .= "Причина: <b>$prichina</b>\n\n";
         } else if ($orders['status'] == 1) {
             if (!$orders['photo_before']) {
-
                 $buttons[] = [
                     $this->buildInlineKeyBoardButton("Родионова", "/order_courier_group_pickup $ids_number $canggu_name"),
                 ];
-
             } else {
                 $buttons[] = [
                     $this->buildInlineKeyBoardButton("В лаундри🧼", "/order_courier_group_laundry_photo $ids_number"),
@@ -982,7 +974,6 @@ class Bot
 
     function set_log_oplata($chat_id, $money, $order_id)
     {
-
         $time = strtotime(date("d.m.Y H:i")); # перевод время в UNIX
 
         $params_q = R::findOne('logoplata', 'ORDER BY id DESC');
@@ -1008,7 +999,6 @@ class Bot
         $users_admin = R::findOne('users', 'chat_id = ?', [$chat_id]);
 
         if ($users_admin['status'] == "0" || $users_admin['status'] == "1") {
-            #$this->sendMessage($chat_id, "Доступ запрещен!8");
             return exit;
         }
     }
@@ -1061,10 +1051,9 @@ class Bot
     }
 
 
-    # 1 регистрирует
+    # 1 Регистрирует
     function reg_customer($chat_id)
     {
-
         $time = strtotime(date("d.m.Y H:i")); # перевод время в UNIX
 
         $params_q = R::findOne('orders', 'ORDER BY id DESC');

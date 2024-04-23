@@ -9,6 +9,9 @@ $my_key = rawurlencode(md5($_POST['tid'] . $_POST['name'] . $_POST['comment'] . 
 if ($_POST['check'] != $my_key) {
     throw new Exception('Invalid key');
 }
+if ($_POST['command'] != 'success') {
+    throw new Exception('Payment failed');
+}
 
 require __DIR__ . '/bot.php';
 
@@ -19,5 +22,14 @@ $order = R::findOne('orders', "lifepay_order_id = {$order_id}");
 $bot = new Bot();
 
 $message = $bot->sendMessage($order->chat_id, 'Оплата прошла успешно');
+$bot->sendMessage($env_variables['system']['id_chat'], 'Оплата прошла успешно');
 
-$bot->DelMessageText($order->chat_id, (int)$message['result']['message_id'] - 1);
+$order->payment = 5;
+$order->paid = 5;
+
+R::store($order);
+
+$bot->DelMessageText($env_variables['system']['id_chat'], $order->admin_message_id);
+
+$bot->sendOrdersAdmin($env_variables['system']['id_chat'], $order->id);
+
