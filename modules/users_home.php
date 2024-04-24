@@ -1084,7 +1084,7 @@ if (isset($atext[0]) && $get_action[0] == 'orders_ves_kurer') {
 
     // Расчет стоимости
     $prices = [
-        'closes' => $weight_all['closes'] * 80000,
+        'closes' => $weight_all['closes'] * 800,
         'shoes' => $weight_all['shoes'] * 120000,
         'bed_linen' => $weight_all['bed_linen'] * 50000,
         'organic' => $weight_all['organic'] * 150000
@@ -1151,7 +1151,7 @@ if ($atext[0] == '/orders_ves_kurer_ok') {
 
     // Рассчет стоимости
     $prices = [
-        'closes' => $weight_all['closes'] * 80000,
+        'closes' => $weight_all['closes'] * 800,
         'shoes' => $weight_all['shoes'] * 120000,
         'bed_linen' => $weight_all['bed_linen'] * 50000,
         'organic' => $weight_all['organic'] * 150000
