@@ -1084,7 +1084,7 @@ if (isset($atext[0]) && $get_action[0] == 'orders_ves_kurer') {
 
     // Расчет стоимости
     $prices = [
-        'closes' => $weight_all['closes'] * 80000,
+        'closes' => $weight_all['closes'] * 800,
         'shoes' => $weight_all['shoes'] * 120000,
         'bed_linen' => $weight_all['bed_linen'] * 50000,
         'organic' => $weight_all['organic'] * 150000
@@ -1098,19 +1098,19 @@ if (isset($atext[0]) && $get_action[0] == 'orders_ves_kurer') {
 
         // Информация о весе одежды
         new TemplateData(":clothesWeight", $weight_all['closes']),
-        new TemplateData(":clothesPrice", number_format($prices['closes'], 0, '', '.')),
+        new TemplateData(":clothesPrice", number_format($prices['closes'], 0, ',', ' ') ),
 
         // Информация о количестве пар обуви
         new TemplateData(":pairOfShoes", $weight_all['shoes']),
-        new TemplateData(":shoesPrice", number_format($prices['shoes'], 0, '', '.')),
+        new TemplateData(":shoesPrice", number_format($prices['shoes'], 0, ',', ' ') ),
 
         // Информация о весе постельного белья
         new TemplateData(":badLinenWeight", $weight_all['bed_linen']),
-        new TemplateData(":badLinenPrice", number_format($prices['bed_linen'], 0, '', '.')),
+        new TemplateData(":badLinenPrice", number_format($prices['bed_linen'], 0, ',', ' ') ),
 
         // Информация о вещах для органической стирки
         new TemplateData(":organicWeight", $weight_all['organic']),
-        new TemplateData(":organicPrice", number_format($prices['organic'], 0, '', '.')),
+        new TemplateData(":organicPrice", number_format($prices['organic'], 0, ',', ' ') ),
 
         // Итоговая стоимость
         new TemplateData(":totalPrice", $price),
@@ -1151,7 +1151,7 @@ if ($atext[0] == '/orders_ves_kurer_ok') {
 
     // Рассчет стоимости
     $prices = [
-        'closes' => $weight_all['closes'] * 80000,
+        'closes' => $weight_all['closes'] * 800,
         'shoes' => $weight_all['shoes'] * 120000,
         'bed_linen' => $weight_all['bed_linen'] * 50000,
         'organic' => $weight_all['organic'] * 150000
@@ -1210,23 +1210,21 @@ if ($atext[0] == '/orders_ves_kurer_ok') {
     $user = R::findOne('users', 'chat_id = ?', [$orders['chat_id']]);
 
     $orders->wt = $weight_all['closes']; # Вес одежды
-    $orders->price_wt = number_format($prices['closes'], 0, '', '.');  # Цена за одежду
-
-    // TODO: Когда-нибудь нормально переписать на цикл с ключами
+    $orders->price_wt = number_format($prices['closes'], 0, ',', ' ');  # Цена за одежду
 
     if ($weight_all['shoes'] != 0) {
         $orders->shoes = $weight_all['shoes'];
-        $orders->price_shoes = number_format($prices['shoes'], 0, '', '.');
+        $orders->price_shoes = number_format($prices['shoes'], 0, ',', ' ');
     }
 
     if ($weight_all['bed_linen'] != 0) {
         $orders->bed_linen = $weight_all['bed_linen'];
-        $orders->bed_linen_price = number_format($prices['bed_linen'], 0, '', '.');
+        $orders->bed_linen_price = number_format($prices['bed_linen'], 0, ',', ' ');
     }
 
     if ($weight_all['organic'] != 0) {
         $orders->organic = $weight_all['organic'];
-        $orders->organic_price = number_format($prices['organic'], 0, '', '.');
+        $orders->organic_price = number_format($prices['organic'], 0, ',', ' ');
     }
 
     $orders->price = $total_price;
@@ -1239,19 +1237,19 @@ if ($atext[0] == '/orders_ves_kurer_ok') {
 
         // Информация о весе одежды
         new TemplateData(":clothesWeight", $weight_all['closes']),
-        new TemplateData(":clothesPrice", number_format($prices['closes'], 0, '', '.')),
+        new TemplateData(":clothesPrice", number_format($prices['closes'], 0, ',', ' ')),
 
         // Информация о количестве пар обуви
         new TemplateData(":pairOfShoes", $weight_all['shoes']),
-        new TemplateData(":shoesPrice", number_format($prices['shoes'], 0, '', '.')),
+        new TemplateData(":shoesPrice", number_format($prices['shoes'], 0, ',', ' ')),
 
         // Информация о весе постельного белья
         new TemplateData(":badLinenWeight", $weight_all['bed_linen']),
-        new TemplateData(":badLinenPrice", number_format($prices['bed_linen'], 0, '', '.')),
+        new TemplateData(":badLinenPrice", number_format($prices['bed_linen'], 0, ',', ' ')),
 
         // Информация о вещах для органической стирки
         new TemplateData(":organicWeight", $weight_all['organic']),
-        new TemplateData(":organicPrice", number_format($prices['organic'], 0, '', '.')),
+        new TemplateData(":organicPrice", number_format($prices['organic'], 0, ',', ' ')),
 
         // Итоговая стоимость
         new TemplateData(":totalPrice", $total_price),
