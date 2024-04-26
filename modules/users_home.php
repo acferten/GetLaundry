@@ -1264,7 +1264,7 @@ if ($atext[0] == '/orders_ves_kurer_ok') {
     switch ($user['lang']) {
         case 'ru':
             $buttons[] = [
-                $this->buildInlineKeyBoardButton("Наличные курьеру в рупиях", "/sposob_pay 1 test $get_action[0]"),
+                $this->buildInlineKeyBoardButton("Наличные курьеру", "/sposob_pay 1 test $get_action[0]"),
             ];
             $buttons[] = [
                 $this->buildInlineKeyBoardButton("Оплата по СБП", "", "https://partner.life-pay.ru/alba/input/?name=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D1%83%D1%81%D0%BB%D1%83%D0%B3+%D0%BF%D1%80%D0%B0%D1%87%D0%B5%D1%87%D0%BD%D0%BE%D0%B9+LaundryBot&cost={$unformatted_total_price}&key=KFBsJSEbBdjuZM4r4u9HpMTYWE%2FvPpBNAAN6%2FYJgl5w%3D&default_email=&prepayment_page=0&order_id={$lifepay_order_id}"),
@@ -1529,13 +1529,10 @@ if ($atext[0] == "/pay_type_bonus_deny" && $atext[1]) {
 
     if ($user['lang'] == 'ru') {
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Наличные курьеру в рупиях", "/sposob_pay 1 test $order_id"),
+            $this->buildInlineKeyBoardButton("Наличные курьеру", "/sposob_pay 1 test $order_id"),
         ];
         $buttons[] = [
-            $this->buildInlineKeyBoardButton("Перевод на BRI в рупиях", "/sposob_pay 2 $price $order_id"),
-        ];
-        $buttons[] = [
-            $this->buildInlineKeyBoardButton("Перевод на Тинькофф в рублях", "/sposob_pay 3 $price $order_id"),
+            $this->buildInlineKeyBoardButton("Перевод на Тинькофф", "/sposob_pay 3 $price $order_id"),
         ];
         $buttons[] = [
             $this->buildInlineKeyBoardButton("Оплатить бонусами", "/sposob_pay 4 $price $order_id"),
@@ -1579,10 +1576,7 @@ if ($atext[0] == "/pay_type_bonus_success" && $atext[1]) {
             case 'ru':
                 $buttons = [
                     [
-                        $this->buildInlineKeyBoardButton("Наличные курьеру в рупиях", "/sposob_pay 1 test $order_id"),
-                    ],
-                    [
-                        $this->buildInlineKeyBoardButton("Перевод на индонезийскую карту в рупиях", "/sposob_pay 2 $sum_can_pay_bonus $order_id"),
+                        $this->buildInlineKeyBoardButton("Наличные курьеру", "/sposob_pay 1 test $order_id"),
                     ],
                     [
                         $this->buildInlineKeyBoardButton("Перевод на Тинькофф в рублях", "/sposob_pay 3 $sum_can_pay_bonus $order_id"),
